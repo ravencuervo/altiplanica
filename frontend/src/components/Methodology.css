@@ -1,33 +1,131 @@
-/* Methodology.css - Diseño con colores sólidos */
+/* Methodology.css - Diseño Zigzag Alternado con Imágenes de Referencia */
 
 .methodology-section {
   position: relative;
   background-color: #ffffff;
 }
 
-.methodology-card {
-  background-color: #f8fafc;
-  border: 1px solid #e2e8f0;
-  transition: all 0.2s ease;
+.methodology-steps-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
 }
 
-.methodology-card:hover {
+@media (min-width: 1024px) {
+  .methodology-steps-container {
+    gap: 4.5rem;
+  }
+}
+
+/* Individual step row */
+.methodology-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  align-items: center;
+  border-radius: 2rem;
   background-color: #ffffff;
-  border-color: #94a3b8;
-  transform: translateY(-3px);
+  padding: 1rem 0;
+  transition: all 0.3s ease;
 }
 
-.methodology-icon-box {
-  transition: all 0.2s ease;
+@media (min-width: 768px) {
+  .methodology-row {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 2.5rem;
+  }
 }
 
-.methodology-card:hover .methodology-icon-box {
-  background-color: #0f172a;
-  color: #ffffff;
-  border-color: #0f172a;
+@media (min-width: 1024px) {
+  .methodology-row {
+    gap: 3.5rem;
+  }
 }
 
-.methodology-nda-banner {
-  background-color: #f1f5f9; /* Solid subtle grey */
-  border: 1px solid #cbd5e1;
+/* Content Column */
+.methodology-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (min-width: 768px) {
+  .methodology-text-col {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 1280px) {
+  .methodology-text-col {
+    grid-column: span 6;
+  }
+}
+
+/* Image Column */
+.methodology-img-col {
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  .methodology-img-col {
+    grid-column: span 6;
+  }
+}
+
+@media (min-width: 1280px) {
+  .methodology-img-col {
+    grid-column: span 6;
+  }
+}
+
+/* Image wrapper card */
+.methodology-img-wrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1.5rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
+  background-color: #f8fafc;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.methodology-row:hover .methodology-img-wrapper {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.14);
+}
+
+.methodology-img-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Badges */
+.methodology-step-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.875rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  width: fit-content;
+}
+
+/* Check items */
+.methodology-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.methodology-point i {
+  margin-top: 0.125rem;
+  flex-shrink: 0;
 }

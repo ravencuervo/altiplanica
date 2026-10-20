@@ -1,13 +1,19 @@
 /* AcademicLevels.css - Colores sólidos y diseño pulcro */
 
-.academic-section {
+.academic-section,
+.pregrado-section,
+.posgrado-section {
   position: relative;
-  background-color: #ffffff;
 }
 
 .level-tab-btn {
-  transition: all 0.2s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   cursor: pointer;
+  user-select: none;
+}
+
+.level-tab-btn:hover {
+  transform: translateY(-1px);
 }
 
 .level-tab-active {
@@ -16,17 +22,17 @@
 }
 
 .level-tab-inactive {
-  background-color: #f1f5f9;
+  background-color: #ffffff;
   color: #334155;
 }
 
 .level-tab-inactive:hover {
-  background-color: #e2e8f0;
+  background-color: #f1f5f9;
   color: #0f172a;
 }
 
 .level-card-box {
-  background-color: #f8fafc; /* Solid subtle background */
+  background-color: #f8fafc;
   border: 1px solid #e2e8f0;
 }
 

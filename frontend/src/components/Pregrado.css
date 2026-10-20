@@ -1,0 +1,89 @@
+/* Pregrado.css - Diseño visual, limpio y sin sobrecarga de texto */
+
+.pregrado-section {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.pregrado-logo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  background-color: #eff6ff;
+  border: 1px solid #bfdbfe;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pregrado-logo-badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px -2px rgba(37, 99, 235, 0.15);
+}
+
+.pregrado-tab-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 700;
+  font-size: 0.875rem;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.pregrado-tab-btn:hover {
+  transform: translateY(-1px);
+}
+
+.pregrado-tab-active {
+  background-color: #1e3a8a; /* Solid Deep Blue */
+  color: #ffffff;
+  box-shadow: 0 10px 20px -5px rgba(30, 58, 138, 0.3);
+}
+
+.pregrado-tab-inactive {
+  background-color: #f8fafc;
+  color: #475569;
+  border-color: #e2e8f0;
+}
+
+.pregrado-tab-inactive:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+.pregrado-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.pregrado-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  background-color: #ffffff;
+  color: #1e293b;
+  border: 1px solid #e2e8f0;
+}
+
+.pregrado-item-check {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  font-size: 0.875rem;
+  color: #334155;
+  transition: transform 0.15s ease;
+}
+
+.pregrado-item-check:hover {
+  transform: translateX(2px);
+}

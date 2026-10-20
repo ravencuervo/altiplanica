@@ -76,11 +76,11 @@ export default function Hero() {
                 <span>Diagnóstico Gratuito de tu Tesis</span>
               </a>
               <a
-                href="#cotizador"
+                href="#servicios"
                 className="hero-cta-secondary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-sm sm:text-base font-semibold"
               >
-                <i className="bi bi-calculator-fill text-blue-700"></i>
-                <span>Cotizar Proyecto</span>
+                <i className="bi bi-compass-fill text-blue-700"></i>
+                <span>Ver Servicios</span>
               </a>
             </div>
 

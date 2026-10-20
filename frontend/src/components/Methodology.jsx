@@ -1,112 +1,162 @@
 import React from 'react';
 import './Methodology.css';
 
-const steps = [
+const stepsData = [
   {
     step: '01',
-    title: 'Diagnóstico & Auditoría Inicial',
-    icon: 'bi-search',
-    description: 'Analizamos el estado actual de tu investigación, el reglamento de grados de tu universidad y las exigencias de tu carrera. Te decimos con exactitud qué falta y cómo abordarlo sin perder tiempo.',
-    pill: 'Sin Costo',
-    pillColor: 'bg-emerald-50 text-emerald-700 border-emerald-200'
+    badge: '100% Free • Sin Costo',
+    badgeClass: 'bg-emerald-50 text-emerald-800 border border-emerald-200',
+    iconColor: 'text-emerald-600',
+    title: 'Diagnóstico Inicial Gratuito',
+    tagline: 'Evaluamos el estado de tu investigación sin costo alguno.',
+    description: 'Envíanos tu tema, borrador, matriz de consistencia o base de datos. Un asesor metodológico revisa la situación de tu proyecto para identificar exactamente qué necesitas y cómo resolverlo.',
+    points: [
+      'Revisión de tema, variables y congruencia metodológica.',
+      'Identificación de vacíos teóricos o errores de formulación.',
+      'Orientación preliminar clara sin ningún compromiso.'
+    ],
+    image: '/images/methodology/1.svg',
+    imageAlt: 'Paso 1: Diagnóstico Inicial Gratuito'
   },
   {
     step: '02',
-    title: 'Cronograma por Entregables',
-    icon: 'bi-calendar-check',
-    description: 'Definimos un plan de trabajo claro con fechas exactas de entrega por capítulos. Puedes pagar en cuotas flexibles a medida que revisas y apruebas cada avance de tu proyecto.',
-    pill: 'Transparencia',
-    pillColor: 'bg-blue-50 text-blue-700 border-blue-200'
+    badge: 'Auditoría Metodológica',
+    badgeClass: 'bg-blue-50 text-blue-800 border border-blue-200',
+    iconColor: 'text-blue-600',
+    title: 'Análisis y Entendimiento del Problema',
+    tagline: 'Comprendemos a fondo las normativas y observaciones de tu facultad.',
+    description: 'Auditamos las observaciones de tus jurados dictaminantes, la directiva de grados de tu universidad y el alcance técnico que se requiere para lograr una investigación viable y aprobada.',
+    points: [
+      'Análisis minucioso del dictamen u observaciones del jurado.',
+      'Alineamiento con las líneas de investigación institucionales.',
+      'Definición precisa del alcance metodológico y estadístico.'
+    ],
+    image: '/images/methodology/2.svg',
+    imageAlt: 'Paso 2: Análisis y Entendimiento del Problema'
   },
   {
     step: '03',
-    title: 'Asesorías 1 a 1 y Redacción',
-    icon: 'bi-person-video2',
-    description: 'Sesiones personalizadas por Google Meet o Zoom. Te explicamos los análisis estadísticos, la fundamentación de las hipótesis y cada decisión metodológica para que domines tu tema.',
-    pill: 'Didáctico',
-    pillColor: 'bg-indigo-50 text-indigo-700 border-indigo-200'
+    badge: 'Propuesta a la Medida',
+    badgeClass: 'bg-purple-50 text-purple-800 border border-purple-200',
+    iconColor: 'text-purple-600',
+    title: 'Propuesta de Plan de Servicios a la Medida',
+    tagline: 'Diseñamos una hoja de ruta con los servicios exactos que requieres.',
+    description: 'Te presentamos una propuesta estructurada con los requerimientos puntuales de tu tesis (análisis estadístico, estructuración de artículo, perfil, etc.), sin paquetes inflados ni cobros innecesarios.',
+    points: [
+      'Selección de módulos específicos que tu proyecto necesita.',
+      'Presupuesto transparente y cerrado sin sobrecostos sorpresa.',
+      'Definición de objetivos claros para cada etapa del trabajo.'
+    ],
+    image: '/images/methodology/3.svg',
+    imageAlt: 'Paso 3: Propuesta de Plan de Servicios a la Medida'
   },
   {
     step: '04',
-    title: 'Turnitin & Simulacro de Jurado',
-    icon: 'bi-trophy',
-    description: 'Pasamos tu trabajo por Turnitin con reporte oficial de similitud (0% plagio). Diseñamos tus diapositivas y realizamos un simulacro intensivo de sustentación con preguntas reales de jurados.',
-    pill: 'Garantía Total',
-    pillColor: 'bg-purple-50 text-purple-700 border-purple-200'
+    badge: 'Gestión por Sistema',
+    badgeClass: 'bg-orange-50 text-orange-800 border border-orange-200',
+    iconColor: 'text-orange-600',
+    title: 'Cronograma de Entregables por Nuestro Sistema',
+    tagline: 'Seguimiento transparente de fases y fechas de entrega en plataforma.',
+    description: 'Programamos un calendario con fechas y fases de entrega por capítulos a través de nuestro sistema de consultoría. Podrás revisar, validar y dar feedback de cada avance con total control de tu tiempo.',
+    points: [
+      'Planificación de entregas por fases mediante el sistema.',
+      'Seguimiento en tiempo real del progreso de tu investigación.',
+      'Aprobación modular de cada avance antes de continuar.'
+    ],
+    image: '/images/methodology/4.svg',
+    imageAlt: 'Paso 4: Cronograma de Entregables por Nuestro Sistema'
+  },
+  {
+    step: '05',
+    badge: '100% Remoto • Google Meet',
+    badgeClass: 'bg-sky-50 text-sky-800 border border-sky-200',
+    iconColor: 'text-sky-600',
+    title: 'Asesorías en Vivo vía Google Meet',
+    tagline: 'Acompañamiento 1 a 1 para que domines cada parte de tu tesis.',
+    description: 'Realizamos sesiones remotas en vivo mediante Google Meet para explicarte paso a paso la interpretación de resultados, las pruebas estadísticas y cada decisión metodológica con total claridad y seguridad.',
+    points: [
+      'Sesiones personalizadas en vivo 1 a 1 desde tu hogar.',
+      'Explicación didáctica de tablas, gráficos y pruebas de hipótesis.',
+      'Resolución de dudas en tiempo real con grabaciones de respaldo.'
+    ],
+    image: '/images/methodology/5.svg',
+    imageAlt: 'Paso 5: Asesorías en Vivo vía Google Meet'
   }
 ];
 
 export default function Methodology() {
   return (
-    <section id="metodologia" className="methodology-section py-20">
+    <section id="metodologia" className="methodology-section py-16 sm:py-24 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full border border-indigo-100">
+        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
             Nuestra Metodología
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
-            ¿Cómo Trabajamos Contigo Hacia tu Titulación?
+            Paso a Paso Hacia tu Aprobación
           </h2>
-          <p className="text-slate-600 mt-3 text-base sm:text-lg">
-            Un proceso estructurado, transparente y con acompañamiento continuo para que nunca te sientas solo frente a tu tesis.
+          <p className="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed">
+            Un proceso estructurado, transparente y gestionado por nuestro sistema para que avances con total seguridad en cada fase.
           </p>
         </div>
 
-        {/* Steps Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {steps.map((item, idx) => (
-            <div
-              key={idx}
-              className="methodology-card rounded-3xl p-7 flex flex-col justify-between group"
-            >
-              <div>
-                <div className="flex items-center justify-between mb-6">
-                  <span className="text-3xl font-black text-slate-300 group-hover:text-indigo-600 transition-colors">
-                    {item.step}
-                  </span>
-                  <div className="methodology-icon-box w-12 h-12 rounded-2xl bg-white border border-slate-200 text-indigo-600 flex items-center justify-center text-xl shadow-sm">
-                    <i className={`bi ${item.icon}`}></i>
+        {/* Zigzag Alternating Steps */}
+        <div className="methodology-steps-container">
+          {stepsData.map((item, index) => {
+            const isEven = index % 2 === 1; // 0-based: 1 (step 02) and 3 (step 04) are even
+
+            return (
+              <div key={item.step} className="methodology-row">
+
+                {/* Text Column (alternating on md+ screens) */}
+                <div className={`methodology-text-col ${isEven ? 'md:order-2' : 'md:order-1'}`}>
+                  <div className="flex items-center gap-3">
+                    <span className="text-3xl sm:text-4xl font-black text-slate-300">
+                      {item.step}
+                    </span>
+                    <span className={`methodology-step-pill ${item.badgeClass}`}>
+                      {item.badge}
+                    </span>
+                  </div>
+
+                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+                    {item.title}
+                  </h3>
+
+                  <p className="text-blue-700 font-semibold text-sm sm:text-base leading-snug">
+                    {item.tagline}
+                  </p>
+
+                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                    {item.description}
+                  </p>
+
+                  <div className="space-y-2.5 pt-2">
+                    {item.points.map((point, pIdx) => (
+                      <div key={pIdx} className="methodology-point">
+                        <i className={`bi bi-check-circle-fill text-sm ${item.iconColor}`}></i>
+                        <span>{point}</span>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
-                <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-indigo-600 transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-sm text-slate-600 leading-relaxed mb-6">
-                  {item.description}
-                </p>
-              </div>
+                {/* Image Column (alternating on md+ screens) */}
+                <div className={`methodology-img-col ${isEven ? 'md:order-1' : 'md:order-2'}`}>
+                  <div className="methodology-img-wrapper">
+                    <img
+                      src={item.image}
+                      alt={item.imageAlt}
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
 
-              <div>
-                <span className={`inline-block text-[11px] font-bold px-3 py-1 rounded-full border ${item.pillColor}`}>
-                  {item.pill}
-                </span>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Callout box */}
-        <div className="methodology-nda-banner mt-14 rounded-3xl p-6 sm:p-8 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <div className="flex items-center gap-4 text-center sm:text-left">
-            <div className="w-14 h-14 rounded-2xl bg-indigo-600 text-white flex items-center justify-center text-2xl flex-shrink-0 shadow-lg shadow-indigo-600/30">
-              <i className="bi bi-shield-check"></i>
-            </div>
-            <div>
-              <h4 className="text-base font-bold text-slate-900">Acuerdo de Confidencialidad y Propiedad Intelectual</h4>
-              <p className="text-xs sm:text-sm text-slate-600">
-                Tu proyecto, ideas y datos te pertenecen al 100%. Firmamos acuerdo de no divulgación (NDA) para tu absoluta tranquilidad.
-              </p>
-            </div>
-          </div>
-          <a
-            href="#contacto"
-            className="flex-shrink-0 px-5 py-3 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-semibold text-xs sm:text-sm transition-all"
-          >
-            Agendar Sesión Inicial
-          </a>
+            );
+          })}
         </div>
 
       </div>

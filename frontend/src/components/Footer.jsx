@@ -53,15 +53,14 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Links 2: Grados y Titulación */}
+          {/* Links 2: Pregrado & Posgrado */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Grados & Titulación</h4>
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Pregrado & Posgrado</h4>
             <ul className="footer-link-list space-y-2.5 text-xs">
-              <li><a href="#titulacion">Pregrado y Titulación</a></li>
-              <li><a href="#titulacion">Segunda Especialidad</a></li>
-              <li><a href="#grados">Maestría (Posgrado)</a></li>
-              <li><a href="#grados">Doctorado (PhD)</a></li>
-              <li><a href="#tesis">Cotizador de Tesis</a></li>
+              <li><a href="#pregrado">Pregrado UNA Puno (Tesis y Artículo)</a></li>
+              <li><a href="#posgrado">Segunda Especialidad EPG</a></li>
+              <li><a href="#posgrado">Maestría (Tesis y Artículo)</a></li>
+              <li><a href="#posgrado">Doctorado (PhD)</a></li>
               <li><a href="#metodologia">Metodología y Garantías</a></li>
             </ul>
           </div>

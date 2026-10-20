@@ -16,9 +16,8 @@ export default function Navbar() {
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
     { name: 'Servicios', href: '#servicios' },
-    { name: 'Grados', href: '#grados' },
-    { name: 'Titulación', href: '#titulacion' },
-    { name: 'Tesis', href: '#tesis' },
+    { name: 'Pregrado', href: '#pregrado' },
+    { name: 'Posgrado', href: '#posgrado' },
     { name: 'Metodología', href: '#metodologia' },
     { name: 'Preguntas', href: '#preguntas' },
     { name: 'Contáctanos', href: '#contacto' },

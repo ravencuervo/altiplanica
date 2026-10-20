@@ -2,9 +2,8 @@ import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
-import Grados from './components/Grados';
-import Titulacion from './components/Titulacion';
-import Calculator from './components/Calculator';
+import Pregrado from './components/Pregrado';
+import Posgrado from './components/Posgrado';
 import Methodology from './components/Methodology';
 import ToolsSection from './components/ToolsSection';
 import Testimonials from './components/Testimonials';
@@ -31,22 +30,17 @@ export default function App() {
           <Services />
         </ScrollReveal>
 
-        {/* 3. Grados (Maestría y Doctorado / PhD) */}
+        {/* 3. Pregrado (UNA Puno - Tesis y Artículo Científico) */}
         <ScrollReveal direction="up" delay={100}>
-          <Grados />
+          <Pregrado />
         </ScrollReveal>
 
-        {/* 4. Titulación (Pregrado y Segunda Especialidad) */}
+        {/* 4. Posgrado (EPG UNA Puno - Especialidad, Maestría y Doctorados) */}
         <ScrollReveal direction="up" delay={100}>
-          <Titulacion />
+          <Posgrado />
         </ScrollReveal>
 
-        {/* 5. Tesis (Desarrollo y Cotizador de Tesis) */}
-        <ScrollReveal direction="up" delay={100}>
-          <Calculator />
-        </ScrollReveal>
-
-        {/* 6. Metodología de Trabajo y Acompañamiento */}
+        {/* 5. Metodología de Trabajo y Acompañamiento */}
         <ScrollReveal direction="up" delay={100}>
           <Methodology />
         </ScrollReveal>
