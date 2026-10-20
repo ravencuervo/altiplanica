@@ -1,0 +1,33 @@
+/* Footer.css */
+.footer-section {
+  background-color: #020617;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  border-top: 1px solid #1e293b;
+}
+
+.footer-social-link {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 0.5rem;
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.footer-social-link:hover {
+  color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.footer-link-list a {
+  transition: color 0.2s ease;
+}
+
+.footer-link-list a:hover {
+  color: #ffffff;
+}

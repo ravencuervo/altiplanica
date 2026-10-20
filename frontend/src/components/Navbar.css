@@ -1,0 +1,44 @@
+/* Navbar.css - Estilo limpio y elegante con colores sólidos */
+
+.navbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  transition: all 0.25s ease;
+}
+
+.navbar-scrolled {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+.navbar-transparent {
+  background-color: #ffffff;
+  border-bottom: 1px solid transparent;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.navbar-nav-pill {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+}
+
+.navbar-link {
+  transition: all 0.15s ease;
+}
+
+.navbar-link:hover {
+  color: #1e40af;
+  background-color: #ffffff;
+}
+
+.navbar-logo-badge {
+  background-color: #0f172a; /* Solid Obsidian */
+  color: #ffffff;
+}

@@ -1,0 +1,13 @@
+/* App.css - Estilos globales del contenedor de la aplicación */
+
+.app-wrapper {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #1e293b;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex-grow: 1;
+}

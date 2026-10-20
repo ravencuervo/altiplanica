@@ -1,0 +1,33 @@
+/* Methodology.css - Diseño con colores sólidos */
+
+.methodology-section {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.methodology-card {
+  background-color: #f8fafc;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.methodology-card:hover {
+  background-color: #ffffff;
+  border-color: #94a3b8;
+  transform: translateY(-3px);
+}
+
+.methodology-icon-box {
+  transition: all 0.2s ease;
+}
+
+.methodology-card:hover .methodology-icon-box {
+  background-color: #0f172a;
+  color: #ffffff;
+  border-color: #0f172a;
+}
+
+.methodology-nda-banner {
+  background-color: #f1f5f9; /* Solid subtle grey */
+  border: 1px solid #cbd5e1;
+}

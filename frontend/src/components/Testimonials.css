@@ -1,0 +1,26 @@
+/* Testimonials.css */
+.testimonials-section {
+  position: relative;
+  background-color: #ffffff;
+}
+
+.testimonial-card {
+  background: rgba(248, 250, 252, 0.9);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 30px -8px rgba(0, 0, 0, 0.08);
+  border-color: #cbd5e1;
+}
+
+.testimonial-quote {
+  font-style: italic;
+  color: #334155;
+  line-height: 1.6;
+}

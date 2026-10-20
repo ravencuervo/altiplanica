@@ -1,0 +1,69 @@
+/* Calculator.css - Diseño sobrio y elegante con colores sólidos */
+
+.calculator-section {
+  position: relative;
+  background-color: #0f172a; /* Solid Obsidian */
+}
+
+.calc-option-btn {
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.calc-option-btn.active {
+  background-color: #1e40af; /* Solid Royal Blue */
+  color: #ffffff;
+  border-color: #2563eb;
+}
+
+.calc-option-btn.inactive {
+  background-color: #1e293b;
+  color: #cbd5e1;
+  border-color: #334155;
+}
+
+.calc-option-btn.inactive:hover {
+  border-color: #475569;
+  background-color: #334155;
+}
+
+.calc-result-card {
+  background-color: #1e293b; /* Solid Dark Slate */
+  border: 1px solid #334155;
+}
+
+.calc-currency-toggle {
+  display: inline-flex;
+  background-color: #1e293b;
+  padding: 0.25rem;
+  border-radius: 0.75rem;
+  border: 1px solid #334155;
+}
+
+.calc-currency-btn {
+  padding: 0.25rem 0.625rem;
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: all 0.15s ease;
+}
+
+.calc-currency-btn.active {
+  background-color: #1e40af;
+  color: #ffffff;
+}
+
+.calc-currency-btn.inactive {
+  background: transparent;
+  color: #94a3b8;
+}
+
+.calc-installment-box {
+  background-color: #132e35;
+  border: 1px solid #0f766e;
+  border-radius: 0.75rem;
+  padding: 0.625rem;
+  margin-top: 0.75rem;
+}

@@ -1,0 +1,32 @@
+/* Services.css - Diseño con colores sólidos */
+
+.services-section {
+  position: relative;
+  background-color: #f8fafc;
+}
+
+.service-card {
+  background-color: #ffffff;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
+  border-color: #94a3b8;
+}
+
+.service-icon-box {
+  transition: all 0.2s ease;
+}
+
+.service-card:hover .service-icon-box {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+.services-cta-banner {
+  background-color: #0f172a; /* Solid Slate Black */
+  border: 1px solid #1e293b;
+}
