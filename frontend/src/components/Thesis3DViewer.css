@@ -1,33 +1,20 @@
-/* Thesis3DViewer.css - Visor 3D totalmente responsivo */
+/* Thesis3DViewer.css - Visor 3D exclusivo para pantallas de escritorio */
 
 .thesis-3d-wrapper {
   position: relative;
   width: 100%;
   max-width: 520px;
   margin: 0 auto;
-  height: 320px; /* Móviles estándar */
-  background: transparent;
-  display: flex;
+  display: none; /* Oculto en móviles y tablets para máxima fluidez y adaptación */
   align-items: center;
   justify-content: center;
-  touch-action: pan-y; /* Permite desplazamiento vertical nativo fluido en móvil */
+  touch-action: pan-y;
   overflow: visible;
-}
-
-@media (min-width: 480px) {
-  .thesis-3d-wrapper {
-    height: 380px;
-  }
-}
-
-@media (min-width: 768px) {
-  .thesis-3d-wrapper {
-    height: 440px;
-  }
 }
 
 @media (min-width: 1024px) {
   .thesis-3d-wrapper {
+    display: flex;
     height: 480px;
   }
 }

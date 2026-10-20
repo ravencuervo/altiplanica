@@ -1,8 +1,9 @@
 import React from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import AcademicLevels from './components/AcademicLevels';
 import Services from './components/Services';
+import Grados from './components/Grados';
+import Titulacion from './components/Titulacion';
 import Calculator from './components/Calculator';
 import Methodology from './components/Methodology';
 import ToolsSection from './components/ToolsSection';
@@ -20,47 +21,52 @@ export default function App() {
       {/* 1. Barra de navegación fija */}
       <Navbar />
 
-      {/* 2. Contenido principal con animación de entrada al hacer scroll */}
+      {/* 2. Contenido principal con animación de entrada (orden exacto del navbar) */}
       <main className="main-content">
-        {/* Hero Section (Fijo y estable al cargar) */}
+        {/* 1. Inicio */}
         <Hero />
 
-        {/* Niveles Académicos (Pregrado, Especialidad, Maestría, Doctorado) */}
-        <ScrollReveal direction="up" delay={100}>
-          <AcademicLevels />
-        </ScrollReveal>
-
-        {/* Portafolio de Servicios (Estadística, Perfil, Artículos, APA/Vancouver) */}
+        {/* 2. Servicios */}
         <ScrollReveal direction="up" delay={100}>
           <Services />
         </ScrollReveal>
 
-        {/* Cotizador Interactivo */}
+        {/* 3. Grados (Maestría y Doctorado / PhD) */}
+        <ScrollReveal direction="up" delay={100}>
+          <Grados />
+        </ScrollReveal>
+
+        {/* 4. Titulación (Pregrado y Segunda Especialidad) */}
+        <ScrollReveal direction="up" delay={100}>
+          <Titulacion />
+        </ScrollReveal>
+
+        {/* 5. Tesis (Desarrollo y Cotizador de Tesis) */}
         <ScrollReveal direction="up" delay={100}>
           <Calculator />
         </ScrollReveal>
 
-        {/* Metodología de Trabajo en 4 Pasos */}
+        {/* 6. Metodología de Trabajo y Acompañamiento */}
         <ScrollReveal direction="up" delay={100}>
           <Methodology />
         </ScrollReveal>
 
-        {/* Software y Estándares Internacionales (SPSS, R, Jamovi, Scopus) */}
+        {/* Software Científico y Estándares Internacionales */}
         <ScrollReveal direction="up" delay={100}>
           <ToolsSection />
         </ScrollReveal>
 
-        {/* Casos de Éxito y Testimonios */}
+        {/* Casos de Éxito y Testimonios de Tesistas */}
         <ScrollReveal direction="up" delay={100}>
           <Testimonials />
         </ScrollReveal>
 
-        {/* Preguntas Frecuentes */}
+        {/* 7. Preguntas Frecuentes */}
         <ScrollReveal direction="up" delay={100}>
           <FAQ />
         </ScrollReveal>
 
-        {/* Formulario de Diagnóstico Gratuito */}
+        {/* 8. Contáctanos (Diagnóstico Gratuito) */}
         <ScrollReveal direction="up" delay={100}>
           <ContactSection />
         </ScrollReveal>

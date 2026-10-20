@@ -32,7 +32,9 @@ export default function FAQ() {
   const [openIdx, setOpenIdx] = useState(0);
 
   return (
-    <section id="faq" className="faq-section py-20">
+    <section id="preguntas" className="faq-section py-20 relative scroll-mt-20">
+      {/* Anchor identifier for existing #faq links */}
+      <span id="faq" className="absolute -top-24 pointer-events-none" />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

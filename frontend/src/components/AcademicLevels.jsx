@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './AcademicLevels.css';
 
 const levelsData = [
@@ -77,8 +77,26 @@ export default function AcademicLevels() {
   const [activeTab, setActiveTab] = useState('pregrado');
   const current = levelsData.find((l) => l.id === activeTab) || levelsData[0];
 
+  useEffect(() => {
+    const handleHash = () => {
+      const hash = window.location.hash;
+      if (hash === '#titulacion') {
+        setActiveTab('pregrado');
+      } else if (hash === '#grados') {
+        setActiveTab('maestria');
+      }
+    };
+
+    handleHash();
+    window.addEventListener('hashchange', handleHash);
+    return () => window.removeEventListener('hashchange', handleHash);
+  }, []);
+
   return (
-    <section id="niveles" className="academic-section py-20">
+    <section id="grados" className="academic-section py-20 relative scroll-mt-20">
+      {/* Anchor identifiers for seamless navigation */}
+      <span id="titulacion" className="absolute -top-24 pointer-events-none" />
+      <span id="niveles" className="absolute -top-24 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Heading */}

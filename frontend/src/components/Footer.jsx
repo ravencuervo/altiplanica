@@ -6,12 +6,12 @@ export default function Footer() {
     <footer className="footer-section">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
-          
+
           {/* Brand info (2 cols) with system logo */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
               <img
-                src="/images/logos/tesis_logo.png"
+                src="/images/logos/tesis_logo.svg"
                 alt="TesisAltiplánica"
                 className="h-10 w-auto object-contain"
               />
@@ -19,7 +19,7 @@ export default function Footer() {
                 Tesis<span className="text-blue-500">Altiplánica</span>
               </span>
             </div>
-            
+
             <p className="text-slate-400 text-xs sm:text-sm leading-relaxed max-w-sm">
               Centro especializado en consultoría metodológica, análisis estadístico avanzado, bioestadística y publicación de artículos científicos para pregrado, segunda especialidad, maestría y doctorado.
             </p>
@@ -53,15 +53,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Links 2: Grados Académicos */}
+          {/* Links 2: Grados y Titulación */}
           <div>
-            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Niveles</h4>
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider mb-4">Grados & Titulación</h4>
             <ul className="footer-link-list space-y-2.5 text-xs">
-              <li><a href="#niveles">Pregrado y Licenciatura</a></li>
-              <li><a href="#niveles">Segunda Especialidad</a></li>
-              <li><a href="#niveles">Maestría (Posgrado)</a></li>
-              <li><a href="#niveles">Doctorado (PhD)</a></li>
-              <li><a href="#cotizador">Calculadora de Tarifas</a></li>
+              <li><a href="#titulacion">Pregrado y Titulación</a></li>
+              <li><a href="#titulacion">Segunda Especialidad</a></li>
+              <li><a href="#grados">Maestría (Posgrado)</a></li>
+              <li><a href="#grados">Doctorado (PhD)</a></li>
+              <li><a href="#tesis">Cotizador de Tesis</a></li>
               <li><a href="#metodologia">Metodología y Garantías</a></li>
             </ul>
           </div>

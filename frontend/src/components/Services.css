@@ -1,32 +1,48 @@
-/* Services.css - Diseño con colores sólidos */
+/* Services.css - Showcase Interactivo de 2 Columnas */
 
 .services-section {
   position: relative;
   background-color: #f8fafc;
 }
 
-.service-card {
-  background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  transition: all 0.2s ease;
+.service-selector-card {
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.service-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px -6px rgba(15, 23, 42, 0.08);
-  border-color: #94a3b8;
+.service-selector-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
 }
 
-.service-icon-box {
-  transition: all 0.2s ease;
+.service-card-active {
+  background-color: #ffffff !important;
+  border-color: #1e40af !important;
+  box-shadow: 0 10px 25px -5px rgba(30, 64, 175, 0.12), 0 8px 10px -6px rgba(30, 64, 175, 0.08) !important;
 }
 
-.service-card:hover .service-icon-box {
-  background-color: #0f172a;
-  color: #ffffff;
+.proof-viewer-window {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-out forwards;
 }
 
 .services-cta-banner {
-  background-color: #0f172a; /* Solid Slate Black */
+  background-color: #0f172a; /* Solid Slate Obsidian */
   border: 1px solid #1e293b;
 }

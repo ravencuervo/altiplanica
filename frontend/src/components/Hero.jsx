@@ -1,9 +1,36 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Thesis3DViewer from './Thesis3DViewer';
 import HeroPatternCanvas from './HeroPatternCanvas';
 import './Hero.css';
 
 export default function Hero() {
+  const [isDesktop, setIsDesktop] = useState(() => {
+    if (typeof window !== 'undefined') {
+      return window.matchMedia('(min-width: 1024px)').matches;
+    }
+    return false;
+  });
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return;
+    const mediaQuery = window.matchMedia('(min-width: 1024px)');
+    const handleChange = (e) => setIsDesktop(e.matches);
+
+    if (mediaQuery.addEventListener) {
+      mediaQuery.addEventListener('change', handleChange);
+    } else {
+      mediaQuery.addListener(handleChange);
+    }
+
+    return () => {
+      if (mediaQuery.removeEventListener) {
+        mediaQuery.removeEventListener('change', handleChange);
+      } else {
+        mediaQuery.removeListener(handleChange);
+      }
+    };
+  }, []);
+
   return (
     <section id="inicio" className="hero-section">
       {/* Interactive Statistical Dot Matrix Background */}
@@ -11,14 +38,14 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
-          
+
           {/* Left Column: Headlines & CTA */}
           <div className="lg:col-span-6 space-y-5 sm:space-y-6 text-center lg:text-left">
-            
+
             {/* Top pill badge */}
             <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs md:text-sm font-semibold bg-slate-100 border border-slate-200 text-slate-800 max-w-full">
               <span className="w-2 h-2 rounded-full bg-blue-700 shrink-0"></span>
-              <span className="truncate sm:whitespace-normal">Asesoría Especializada Universitaria & Posgrado</span>
+              <span className="truncate sm:whitespace-normal">Asesoría Especializada de Pregrado & Posgrado</span>
               <i className="bi bi-patch-check-fill text-blue-700 shrink-0"></i>
             </div>
 
@@ -34,8 +61,8 @@ export default function Hero() {
               <strong className="text-slate-900 font-semibold">Pregrado</strong>,{' '}
               <strong className="text-slate-900 font-semibold">Segunda Especialidad</strong>,{' '}
               <strong className="text-slate-900 font-semibold">Maestría</strong> y{' '}
-              <strong className="text-slate-900 font-semibold">Doctorado</strong>. 
-              Desde el perfil de proyecto hasta la contrastación estadística (SPSS/R), 
+              <strong className="text-slate-900 font-semibold">Doctorado</strong>.
+              Desde el perfil de proyecto hasta la contrastación estadística (SPSS/R),
               formateo editorial (APA/Vancouver) y publicación científica indexada.
             </p>
 
@@ -74,12 +101,17 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: 3D Interactive Model directly integrated in the Hero */}
+          {/* Right Column: 3D Interactive Model (Desktop only) and Credentials */}
           <div className="lg:col-span-6 flex flex-col items-center w-full max-w-lg lg:max-w-none mx-auto mt-2 lg:mt-0">
-            <Thesis3DViewer />
+            {/* 3D Model: Desactivado en responsive para máxima fluidez y adaptabilidad */}
+            {isDesktop && (
+              <div className="hidden lg:block w-full">
+                <Thesis3DViewer />
+              </div>
+            )}
 
             {/* Stats badges directly beneath */}
-            <div className="w-full grid grid-cols-3 gap-2 sm:gap-3 mt-3 sm:mt-4">
+            <div className="w-full grid grid-cols-3 gap-2 sm:gap-3 mt-4 lg:mt-4">
               <div className="hero-stats-badge">
                 <p className="text-[10px] sm:text-xs text-slate-500 font-medium truncate">Tesis Aprobadas</p>
                 <p className="text-sm sm:text-base md:text-xl font-bold text-slate-900 mt-0.5">+1,250</p>

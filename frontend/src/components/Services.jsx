@@ -1,176 +1,197 @@
-import React from 'react';
+import React, { useState } from 'react';
+import BeforeAfterSlider from './BeforeAfterSlider';
 import './Services.css';
 
-const services = [
+const servicesData = [
   {
+    id: 'estadistica',
+    num: '01',
     icon: 'bi-bar-chart-fill',
     title: 'Análisis Estadístico Avanzado',
-    tag: 'Especialidad Principal',
-    tagColor: 'bg-blue-100 text-blue-800',
-    description: 'Procesamiento de datos con rigor científico. Tablas, gráficos en alta resolución e interpretación detallada de resultados.',
-    items: [
-      'Contrastación de hipótesis paramétricas y no paramétricas (t-Student, ANOVA, Chi-cuadrado, Mann-Whitney)',
-      'Pruebas de normalidad (Kolmogorov-Smirnov, Shapiro-Wilk) y confiabilidad (Alfa de Cronbach, Omega de McDonald)',
-      'Modelos de regresión lineal, logística, multivariado y ecuaciones estructurales (SmartPLS)',
-      'Manejo de software: SPSS, RStudio, Jamovi, Stata y Python estadístico'
-    ],
-    highlight: 'Incluye explicación personalizada en video o sesión para tu defensa ante el jurado.'
+    tag: 'SPSS / RStudio / Jamovi',
+    badge: 'Máximo Rigor',
+    badgeColor: 'bg-blue-100 text-blue-800',
+    shortDesc: 'Procesamiento de datos, contrastación de hipótesis y tablas normalizadas en APA o Vancouver.',
+    time: '48 a 72 horas',
+    formats: ['.sav (SPSS)', '.RData', 'Tablas APA en Word'],
+    proofTitle: 'Análisis Estadístico: Antes vs Después',
+    proofSubtitle: 'De datos dispersos con errores de fórmula a procesamiento inferencial y tablas APA verificadas',
+    beforeImage: '/images/services/3.svg',
+    afterImage: '/images/services/4.svg',
+    beforeLabel: 'ANTES: Excel con Errores',
+    afterLabel: 'DESPUÉS: SPSS/R Verificado',
+    beforeDesc: 'Base de datos desordenada, errores de cálculo #¡VALOR!, sin pruebas de normalidad ni p-valor para sustentar.',
+    afterDesc: 'Modelos de regresión, tablas APA automáticas, R² = 0.884, hipótesis contrastada (p < 0.001) y explicación 1 a 1.',
   },
   {
+    id: 'perfil',
+    num: '02',
     icon: 'bi-journal-bookmark-fill',
     title: 'Perfil y Proyecto de Tesis',
     tag: 'Fase Inicial Crítica',
-    tagColor: 'bg-emerald-100 text-emerald-800',
-    description: 'Estructuración sólida de tu plan de investigación para lograr una aprobación rápida sin rechazos de los comités.',
-    items: [
-      'Planteamiento, formulación y justificación teórica y práctica del problema',
-      'Matriz de consistencia metodológica perfectamente articulada',
-      'Estado del arte y antecedentes nacionales e internacionales actualizados (últimos 5 años)',
-      'Operacionalización exhaustiva de variables e indicadores medibles'
-    ],
-    highlight: 'Garantía de aprobación en comisiones de investigación y ética universitaria.'
+    badge: '100% Aprobación',
+    badgeColor: 'bg-emerald-100 text-emerald-800',
+    shortDesc: 'Estructuración metodológica, matriz de consistencia y antecedentes actualizados sin rechazos.',
+    time: '3 a 5 días',
+    formats: ['Matriz de Consistencia', 'Word Institucional', 'Operacionalización'],
+    proofTitle: 'Perfil de Tesis: Antes vs Después',
+    proofSubtitle: 'De un borrador observado por el comité a un plan de tesis aprobado con resolución oficial',
+    beforeImage: '/images/services/5.svg',
+    afterImage: '/images/services/6.svg',
+    beforeLabel: 'ANTES: Proyecto Observado',
+    afterLabel: 'DESPUÉS: Plan Aprobado 100%',
+    beforeDesc: 'Tema ambiguo, objetivos desconectados de las variables y rechazo reiterado de la comisión evaluadora.',
+    afterDesc: 'Matriz de consistencia perfectamente articulada, antecedentes Scopus/SciELO recientes y resolución de aprobación.',
   },
   {
+    id: 'articulos',
+    num: '03',
     icon: 'bi-file-earmark-diff-fill',
-    title: 'Artículos Científicos (Scopus / WoS)',
+    title: 'Artículos Scopus & WoS',
     tag: 'Publicación Indexada',
-    tagColor: 'bg-purple-100 text-purple-800',
-    description: 'Transformación de tu tesis o investigación en manuscritos de alto impacto científico listos para someter a revisión por pares.',
-    items: [
-      'Estructura IMRyD (Introducción, Métodos, Resultados y Discusión)',
-      'Adaptación estricta a directrices para autores (Author Guidelines) de revistas indexadas',
-      'Selección estratégica de revistas en Scopus (Q1, Q2, Q3, Q4), Web of Science, SciELO y Latindex',
-      'Respuesta y subsanación de cartas de observaciones de revisores pares'
-    ],
-    highlight: 'Orientación para cumplimiento de requisitos de graduación y categorización RENACYT.'
+    badge: 'Cuartiles Q1 / Q2',
+    badgeColor: 'bg-purple-100 text-purple-800',
+    shortDesc: 'Conversión de tesis a manuscrito bajo estructura IMRyD y postulación a revistas de impacto.',
+    time: 'Según revista',
+    formats: ['Estructura IMRyD', 'Carta a Revisores', 'DOI Indexado'],
+    proofTitle: 'Artículo Científico: Antes vs Después',
+    proofSubtitle: 'De rechazo editorial sin revisión a carta formal de aceptación en revista indexada Scopus Q1/Q2',
+    beforeImage: '/images/services/7.svg',
+    afterImage: '/images/services/8.svg',
+    beforeLabel: 'ANTES: Desk Reject (Rechazado)',
+    afterLabel: 'DESPUÉS: Aceptado Scopus Q1',
+    beforeDesc: 'Devolución de manuscrito por falta de formato IMRyD, literatura desactualizada e inglés académico deficiente.',
+    afterDesc: 'Manuscrito ajustado a Author Guidelines, respuesta sólida a cartas de revisores y código DOI oficial emitido.',
   },
   {
-    icon: 'bi-file-text-fill',
-    title: 'Formateo y Normas Editoriales',
-    tag: 'Estilo y Citas',
-    tagColor: 'bg-amber-100 text-amber-800',
-    description: 'Edición profesional de formato, citas bibliográficas y diagramación conforme al manual institucional de tu universidad.',
-    items: [
-      'Normas APA (7ma edición), Vancouver (Ciencias Médicas), IEEE (Ingeniería), ISO 690 y Chicago',
-      'Gestión automatizada de referencias bibliográficas con Mendeley, Zotero o EndNote',
-      'Formateo integral de índices automáticos de tablas, figuras, ecuaciones y anexos',
-      'Informe preliminar y final de similitud Turnitin sin depósito'
-    ],
-    highlight: 'Reducción de porcentaje de similitud textual con estricta ética académica.'
+    id: 'formato',
+    num: '04',
+    icon: 'bi-shield-check',
+    title: 'Formato APA / Vancouver & Turnitin',
+    tag: 'Estilo y Originalidad',
+    badge: 'Turnitin 0% Plagio',
+    badgeColor: 'bg-teal-100 text-teal-800',
+    shortDesc: 'Diagramación editorial, citas con Mendeley/Zotero y reporte oficial Turnitin sin depósito.',
+    time: '24 a 48 horas',
+    formats: ['Reporte Oficial Turnitin', 'APA 7ma / Vancouver', 'Índices Automáticos'],
+    proofTitle: 'Turnitin & Formato: Antes vs Después',
+    proofSubtitle: 'De un reporte con 38% de similitud crítica a un certificado oficial Turnitin con 0% a 2% sin depósito',
+    beforeImage: '/images/services/1.svg',
+    afterImage: '/images/services/2.svg',
+    beforeLabel: 'ANTES: 38% Similitud (Crítico)',
+    afterLabel: 'DESPUÉS: 2% Similitud (Aprobado)',
+    beforeDesc: 'Párrafos marcados en rojo por copia textual involuntaria y citas desordenadas que impiden sustentar.',
+    afterDesc: 'Redacción y parafraseo original riguroso, citas automáticas con Mendeley y reporte en PDF sin guardar en el repositorio.',
   },
   {
+    id: 'integral',
+    num: '05',
     icon: 'bi-pencil-square',
     title: 'Desarrollo Integral de Tesis',
     tag: 'Acompañamiento 360°',
-    tagColor: 'bg-indigo-100 text-indigo-800',
-    description: 'Guía paso a paso desde el primer capítulo hasta las conclusiones y recomendaciones finales del informe final.',
-    items: [
-      'Redacción del marco teórico y conceptual con literatura de alto impacto',
-      'Diseño metodológico: tipo, nivel, diseño, población, muestra y técnicas de recolección',
-      'Construcción y discusión de resultados contrastados con los antecedentes',
-      'Redacción de conclusiones contundentes y recomendaciones aplicables'
-    ],
-    highlight: 'Entregas por capítulos progresivos para que revises y valides en cada fase.'
+    badge: 'Capítulo por Capítulo',
+    badgeColor: 'bg-indigo-100 text-indigo-800',
+    shortDesc: 'Acompañamiento completo desde el primer capítulo hasta las conclusiones con entregas validadas.',
+    time: 'Por entregables',
+    formats: ['Word con Control de Cambios', 'Entregas Progresivas', 'Sesiones 1 a 1'],
+    proofTitle: 'Desarrollo Integral: Antes vs Después',
+    proofSubtitle: 'De meses de estancamiento y carpetas dispersas a un documento final con todos los capítulos aprobados',
+    beforeImage: '/images/services/9.svg',
+    afterImage: '/images/services/10.svg',
+    beforeLabel: 'ANTES: Estancado Meses',
+    afterLabel: 'DESPUÉS: 5 Capítulos Validados',
+    beforeDesc: 'Frustración, versiones contradictorias en Word, falta de tiempo laboral y observaciones continuas de asesores.',
+    afterDesc: 'Entregas progresivas capítulo por capítulo con control de cambios, reuniones de avance 1 a 1 y pagos por hito aprobado.',
   },
   {
-    icon: 'bi-easel2-fill',
-    title: 'Sustentación y Balotario de Preguntas',
-    tag: 'Defensa Exitosa',
-    tagColor: 'bg-rose-100 text-rose-800',
-    description: 'Entrenamiento intensivo y simulacro para defender tu investigación con confianza y seguridad total ante el tribunal.',
-    items: [
-      'Diseño de diapositivas ejecutivas de alto impacto visual y síntesis metodológica',
-      'Balotario con las más de 50 preguntas más frecuentes de jurados y sus respuestas modelo',
-      'Simulacro de sustentación por videollamada con retroalimentación en tiempo real',
-      'Técnicas de oratoria científica y manejo del tiempo en la exposición'
-    ],
-    highlight: 'Llega al día de tu sustentación con el dominio total de cada página de tu tesis.'
-  }
+    id: 'sustentacion',
+    num: '06',
+    icon: 'bi-file-earmark-slides-fill',
+    title: 'Creación de Diapositivas para Sustentación',
+    tag: 'Presentaciones PPT / PDF',
+    badge: 'Listo para Exponer',
+    badgeColor: 'bg-rose-100 text-rose-800',
+    shortDesc: 'Diseño profesional de diapositivas ejecutivas con síntesis metodológica, gráficos estadísticos y guion de exposición.',
+    time: '24 a 48 horas',
+    formats: ['PowerPoint (.pptx)', 'PDF 16:9 HD', 'Guion de Exposición'],
+    proofTitle: 'Presentación de Sustentación: Antes vs Después',
+    proofSubtitle: 'De diapositivas saturadas de texto que aburren al jurado a un deck ejecutivo 16:9 de alto impacto',
+    beforeImage: '/images/services/11.svg',
+    afterImage: '/images/services/12.svg',
+    beforeLabel: 'ANTES: Párrafos Saturados',
+    afterLabel: 'DESPUÉS: Deck Ejecutivo 16:9',
+    beforeDesc: 'Copiar y pegar texto de la tesis en láminas densas que cansan al jurado y provocan exceso de preguntas.',
+    afterDesc: '15 a 18 diapositivas ejecutivas con gráficos claros, notas del orador calibradas para 20 minutos y plantilla institucional.',
+  },
 ];
 
 export default function Services() {
+  const [activeId, setActiveId] = useState('estadistica');
+  const activeService = servicesData.find((s) => s.id === activeId) || servicesData[0];
+
   return (
-    <section id="servicios" className="services-section py-20">
+    <section id="servicios" className="services-section py-20 bg-slate-50 relative scroll-mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full border border-indigo-100">
-            Portafolio de Servicios
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
+            Pruebas Reales de Entregables
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
-            Soluciones Integrales para tu Graduación
+            Portafolio de Servicios: Antes y Después
           </h2>
           <p className="text-slate-600 mt-3 text-base sm:text-lg">
-            No importa en qué etapa te encuentres: podemos ayudarte desde cero, destrabar un capítulo detenido o perfeccionar tu trabajo final.
+            Desliza la barra interactiva para comparar el estado inicial habitual frente al resultado final profesional que recibirás.
           </p>
         </div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-7">
-          {services.map((srv, idx) => (
-            <div
-              key={idx}
-              className="service-card rounded-3xl p-7 flex flex-col justify-between group"
-            >
-              <div>
-                {/* Header Icon + Tag */}
-                <div className="flex items-center justify-between mb-5">
-                  <div className="service-icon-box w-13 h-13 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center text-2xl shadow-sm">
-                    <i className={`bi ${srv.icon}`}></i>
-                  </div>
-                  <span className={`text-[11px] font-bold px-2.5 py-1 rounded-full ${srv.tagColor}`}>
-                    {srv.tag}
-                  </span>
+        {/* Service Selector Tabs (6 Services) */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2.5 sm:gap-3 mb-8">
+          {servicesData.map((service) => {
+            const isActive = activeId === service.id;
+            return (
+              <button
+                key={service.id}
+                onClick={() => setActiveId(service.id)}
+                type="button"
+                className={`flex flex-col items-center text-center p-3 sm:p-4 rounded-2xl border transition-all ${
+                  isActive
+                    ? 'bg-blue-700 text-white border-blue-700 shadow-lg shadow-blue-700/20 ring-2 ring-blue-700/30'
+                    : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200 shadow-sm'
+                }`}
+              >
+                <div
+                  className={`w-10 h-10 rounded-xl flex items-center justify-center text-lg mb-2 transition-colors ${
+                    isActive ? 'bg-white/20 text-white' : 'bg-blue-50 text-blue-700'
+                  }`}
+                >
+                  <i className={`bi ${service.icon}`}></i>
                 </div>
-
-                <h3 className="text-xl font-bold text-slate-900 mb-2.5 group-hover:text-indigo-600 transition-colors">
-                  {srv.title}
+                <span className={`text-[10px] font-bold uppercase tracking-wider mb-0.5 ${isActive ? 'text-blue-200' : 'text-slate-400'}`}>
+                  {service.num}
+                </span>
+                <h3 className="text-xs sm:text-sm font-bold leading-snug line-clamp-2">
+                  {service.title}
                 </h3>
-                <p className="text-sm text-slate-600 mb-5 leading-relaxed">
-                  {srv.description}
-                </p>
-
-                {/* Items list */}
-                <ul className="space-y-2.5 mb-6">
-                  {srv.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-2 text-xs text-slate-700 leading-normal">
-                      <i className="bi bi-check-circle-fill text-emerald-500 mt-0.5 text-xs flex-shrink-0"></i>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Bottom highlight pill */}
-              <div className="pt-4 border-t border-slate-100">
-                <div className="p-3 rounded-xl bg-slate-50 border border-slate-100 flex items-start gap-2 text-xs text-slate-600">
-                  <i className="bi bi-stars text-amber-500 text-sm flex-shrink-0 mt-0.5"></i>
-                  <span>{srv.highlight}</span>
-                </div>
-              </div>
-            </div>
-          ))}
+              </button>
+            );
+          })}
         </div>
 
-        {/* Banner CTA */}
-        <div className="services-cta-banner mt-14 rounded-3xl p-8 sm:p-10 text-white flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="space-y-2 text-center md:text-left">
-            <h3 className="text-xl sm:text-2xl font-bold">¿Tienes observaciones de tu asesor o jurado?</h3>
-            <p className="text-slate-300 text-sm max-w-xl">
-              Realizamos auditoría metodológica urgente y levantamiento minucioso de observaciones en tiempo récord.
-            </p>
+        {/* Full-Width A4 Document Comparator */}
+        <div className="w-full max-w-2xl mx-auto">
+          <div className="proof-viewer-window bg-white rounded-3xl border border-slate-200/90 shadow-2xl overflow-hidden p-2 sm:p-4">
+            <BeforeAfterSlider
+              key={activeService.id}
+              beforeImage={activeService.beforeImage}
+              afterImage={activeService.afterImage}
+              beforeLabel="ANTES"
+              afterLabel="DESPUÉS"
+            />
           </div>
-          <a
-            href="https://wa.me/51999999999?text=Hola,%20tengo%20observaciones%20de%20mi%20jurado%20y%20necesito%20ayuda%20para%20subsanarlas"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-emerald-500 hover:bg-emerald-600 font-bold text-sm text-white shadow-lg transition-all"
-          >
-            <i className="bi bi-whatsapp text-lg"></i>
-            <span>Revisar Observaciones Gratis</span>
-          </a>
         </div>
+
 
       </div>
     </section>

@@ -53,14 +53,16 @@ export default function Calculator() {
   };
 
   return (
-    <section id="cotizador" className="calculator-section py-20 text-white">
+    <section id="cotizador" className="calculator-section py-20 text-white relative scroll-mt-20">
+      {/* Anchor for TESIS navigation link */}
+      <span id="tesis" className="absolute -top-24 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="flex items-center justify-center gap-3 mb-3">
             <span className="text-xs font-bold uppercase tracking-wider text-teal-300 bg-teal-950 border border-teal-800 px-3.5 py-1.5 rounded-full">
-              Transparencia Total
+              Asesoría & Cotizador de Tesis
             </span>
 
             {/* Currency Switcher */}
@@ -83,10 +85,10 @@ export default function Calculator() {
           </div>
 
           <h2 className="text-3xl sm:text-4xl font-extrabold text-white mt-2 tracking-tight">
-            Calcula tu Cotización Personalizada
+            Desarrollo y Presupuesto de tu Tesis
           </h2>
           <p className="text-slate-400 mt-3 text-base sm:text-lg">
-            Selecciona tu grado académico, el tipo de servicio y el tiempo estimado para obtener una referencia inmediata.
+            Selecciona tu grado o titulación, área de estudio y requerimientos para obtener una estimación transparente en tiempo real.
           </p>
         </div>
 

@@ -15,23 +15,24 @@ export default function Navbar() {
 
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
-    { name: 'Niveles', href: '#niveles' },
     { name: 'Servicios', href: '#servicios' },
-    { name: 'Cotizador', href: '#cotizador' },
+    { name: 'Grados', href: '#grados' },
+    { name: 'Titulación', href: '#titulacion' },
+    { name: 'Tesis', href: '#tesis' },
     { name: 'Metodología', href: '#metodologia' },
-    { name: 'Testimonios', href: '#testimonios' },
-    { name: 'Preguntas', href: '#faq' },
+    { name: 'Preguntas', href: '#preguntas' },
+    { name: 'Contáctanos', href: '#contacto' },
   ];
 
   return (
     <header className={`navbar-header ${isScrolled ? 'navbar-scrolled' : 'navbar-transparent'}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          
+
           {/* Logo Brand with System Logo */}
           <a href="#inicio" className="flex items-center gap-3 group">
             <img
-              src="/images/logos/tesis_logo.png"
+              src="/images/logos/tesis_logo.svg"
               alt="TesisAltiplánica Logo"
               className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
             />
@@ -46,12 +47,12 @@ export default function Navbar() {
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="navbar-nav-pill hidden lg:flex items-center gap-1 px-3 py-1.5 rounded-full">
+          <nav className="navbar-nav-pill hidden lg:flex items-center gap-0.5 xl:gap-1 px-2.5 xl:px-3 py-1.5 rounded-full">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="navbar-link px-4 py-1.5 text-sm font-semibold text-slate-700 rounded-full"
+                className="navbar-link px-2.5 xl:px-3 py-1 text-xs font-bold text-slate-700 hover:text-blue-700 rounded-full transition-colors whitespace-nowrap"
               >
                 {link.name}
               </a>
@@ -77,7 +78,7 @@ export default function Navbar() {
               key={link.name}
               href={link.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="block px-3 py-2 text-base font-semibold text-slate-700 hover:bg-slate-100 hover:text-blue-700 rounded-lg transition-colors"
+              className="block px-3 py-2.5 text-sm font-bold tracking-wide text-slate-700 hover:bg-slate-100 hover:text-blue-700 rounded-lg transition-colors"
             >
               {link.name}
             </a>

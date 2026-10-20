@@ -35,7 +35,9 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contacto" className="contact-section py-20">
+    <section id="contacto" className="contact-section py-20 relative scroll-mt-20">
+      {/* Anchor identifier for #contactanos */}
+      <span id="contactanos" className="absolute -top-24 pointer-events-none" />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <div className="contact-hero-banner p-8 sm:p-12 lg:p-16 text-white">

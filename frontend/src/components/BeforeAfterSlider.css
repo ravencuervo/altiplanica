@@ -1,0 +1,26 @@
+/* BeforeAfterSlider.css - Deslizador interactivo de Antes y Después */
+
+.before-after-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.before-after-container {
+  touch-action: none;
+  background-color: #ffffff;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.before-after-container.dragging {
+  cursor: ew-resize;
+}
+
+.slider-handle {
+  transition: box-shadow 0.15s ease;
+}
+
+.before-after-container.dragging .slider-handle {
+  border-color: #2563eb;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
