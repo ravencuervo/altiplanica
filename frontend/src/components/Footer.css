@@ -6,6 +6,21 @@
   border-top: 1px solid #1e293b;
 }
 
+/* Logo en blanco puro preservando transparencia y centrado en responsive */
+.footer-logo-white {
+  filter: brightness(0) invert(1);
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 1024px) {
+  .footer-logo-white {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .footer-social-link {
   width: 2rem;
   height: 2rem;

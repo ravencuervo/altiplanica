@@ -1,131 +1,114 @@
-/* Methodology.css - Diseño Zigzag Alternado con Imágenes de Referencia */
+/* Methodology.css - Pasos a todo el ancho con corte diagonal en desktop e imagen con borde redondeado (sin cuadrícula) en responsive */
 
 .methodology-section {
   position: relative;
   background-color: #ffffff;
 }
 
-.methodology-steps-container {
-  display: flex;
-  flex-direction: column;
-  gap: 3.5rem;
-}
-
-@media (min-width: 1024px) {
-  .methodology-steps-container {
-    gap: 4.5rem;
-  }
-}
-
-/* Individual step row */
-.methodology-row {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2rem;
-  align-items: center;
-  border-radius: 2rem;
-  background-color: #ffffff;
-  padding: 1rem 0;
-  transition: all 0.3s ease;
-}
-
-@media (min-width: 768px) {
-  .methodology-row {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
-    gap: 2.5rem;
-  }
-}
-
-@media (min-width: 1024px) {
-  .methodology-row {
-    gap: 3.5rem;
-  }
-}
-
-/* Content Column */
-.methodology-text-col {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-@media (min-width: 768px) {
-  .methodology-text-col {
-    grid-column: span 6;
-  }
-}
-
-@media (min-width: 1280px) {
-  .methodology-text-col {
-    grid-column: span 6;
-  }
-}
-
-/* Image Column */
-.methodology-img-col {
-  position: relative;
-}
-
-@media (min-width: 768px) {
-  .methodology-img-col {
-    grid-column: span 6;
-  }
-}
-
-@media (min-width: 1280px) {
-  .methodology-img-col {
-    grid-column: span 6;
-  }
-}
-
-/* Image wrapper card */
-.methodology-img-wrapper {
+.methodology-step-band {
   position: relative;
   overflow: hidden;
-  border-radius: 1.5rem;
-  border: 1px solid #e2e8f0;
-  box-shadow: 0 10px 30px -5px rgba(15, 23, 42, 0.08);
-  background-color: #f8fafc;
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  transition: background-color 0.25s ease;
 }
 
-.methodology-row:hover .methodology-img-wrapper {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px -10px rgba(15, 23, 42, 0.14);
+/* Margen exterior para que el texto respete la grilla central (max-w-7xl) en desktop */
+@media (min-width: 1024px) {
+  .methodology-text-left {
+    padding-left: max(3rem, calc((100vw - 80rem) / 2 + 2rem));
+    padding-right: 3.5rem;
+    align-items: flex-start;
+  }
+
+  .methodology-text-right {
+    padding-right: max(3rem, calc((100vw - 80rem) / 2 + 2rem));
+    padding-left: 3.5rem;
+    align-items: flex-start;
+  }
 }
 
-.methodology-img-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
+/* ========================================================
+   1. DESKTOP (≥ 1024px): Corte diagonal pronunciado (20%)
+   ======================================================== */
+@media (min-width: 1024px) {
+  .methodology-diagonal-right {
+    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
+    background-color: #f1f5f9;
+    height: 100%;
+    min-height: 520px;
+    padding: 0;
+  }
+
+  .methodology-diagonal-left {
+    clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
+    background-color: #f1f5f9;
+    height: 100%;
+    min-height: 520px;
+    padding: 0;
+  }
+
+  .methodology-full-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
+    display: block;
+    transition: transform 0.4s ease-out;
+  }
+
+  .methodology-step-band:hover .methodology-full-img {
+    transform: scale(1.04);
+  }
 }
 
-/* Badges */
-.methodology-step-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.35rem 0.875rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  width: fit-content;
+/* ========================================================
+   2. RESPONSIVE (< 1024px): Imagen pura con bordes redondeados (sin cuadrícula ni bordes de caja)
+   ======================================================== */
+@media (max-width: 1023px) {
+  .methodology-diagonal-right,
+  .methodology-diagonal-left {
+    padding: 0 1.25rem 2.5rem 1.25rem;
+    background-color: transparent;
+    border: none;
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: none;
+  }
+
+  .methodology-full-img {
+    width: 100%;
+    max-width: 620px;
+    height: auto;
+    max-height: 360px;
+    object-fit: cover;
+    border-radius: 1.25rem; /* Solo bordes redondeados en la imagen */
+    border: none;           /* Sin cuadrícula ni bordes de caja */
+    background: transparent;/* Sin fondo de cuadrícula */
+    box-shadow: none;       /* Sin sombras de caja */
+    padding: 0;             /* Sin padding */
+    display: block;
+    transition: transform 0.25s ease;
+  }
+
+  .methodology-step-band:hover .methodology-full-img {
+    transform: translateY(-2px);
+  }
 }
 
-/* Check items */
-.methodology-point {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.625rem;
-  font-size: 0.875rem;
-  color: #334155;
-  line-height: 1.45;
-}
+@media (min-width: 640px) and (max-width: 1023px) {
+  .methodology-diagonal-right,
+  .methodology-diagonal-left {
+    padding: 0 2.5rem 3.5rem 2.5rem;
+  }
 
-.methodology-point i {
-  margin-top: 0.125rem;
-  flex-shrink: 0;
+  .methodology-full-img {
+    border-radius: 1.5rem;
+    max-height: 440px;
+  }
 }

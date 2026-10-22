@@ -29,7 +29,12 @@ const faqs = [
 ];
 
 export default function FAQ() {
-  const [openIdx, setOpenIdx] = useState(0);
+  // Inicialmente cerrado para que al presionar se abra con la animación suave
+  const [openIdx, setOpenIdx] = useState(null);
+
+  const toggleFAQ = (idx) => {
+    setOpenIdx(prev => (prev === idx ? null : idx));
+  };
 
   return (
     <section id="preguntas" className="faq-section py-20 relative scroll-mt-20">
@@ -39,64 +44,55 @@ export default function FAQ() {
         
         {/* Section Header */}
         <div className="text-center mb-14">
-          <span className="text-xs font-bold uppercase tracking-wider text-indigo-600 bg-indigo-50 px-3 py-1.5 rounded-full border border-indigo-100">
+          <span className="text-xs font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3 py-1.5 rounded-full border border-blue-200">
             Resuelve tus Dudas
           </span>
           <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
             Preguntas Frecuentes
           </h2>
           <p className="text-slate-600 mt-3 text-base">
-            Conoce cómo funciona nuestra asesoría y el respaldo que te brindamos.
+            Conoce cómo funciona nuestra asesoría y el respaldo metodológico que te brindamos.
           </p>
         </div>
 
-        {/* Accordion */}
+        {/* Accordion con transición fluida de apertura y cierre */}
         <div className="space-y-4">
           {faqs.map((faq, idx) => {
             const isOpen = openIdx === idx;
             return (
-              <div key={idx} className="faq-item overflow-hidden">
+              <div 
+                key={idx} 
+                className={`faq-item ${isOpen ? 'faq-item-open' : ''}`}
+              >
                 <button
                   type="button"
-                  onClick={() => setOpenIdx(isOpen ? null : idx)}
-                  className="faq-toggle-btn hover:bg-slate-50/50 transition-colors"
+                  onClick={() => toggleFAQ(idx)}
+                  className="faq-toggle-btn"
+                  aria-expanded={isOpen}
                 >
-                  <span className="text-base font-bold text-slate-900 flex items-center gap-2.5">
-                    <i className="bi bi-question-circle-fill text-indigo-600 text-lg flex-shrink-0"></i>
+                  <span className="text-base font-bold text-slate-900 flex items-center gap-3 text-left">
+                    <i className={`bi bi-question-circle-fill text-lg flex-shrink-0 transition-colors ${
+                      isOpen ? 'text-blue-600' : 'text-slate-400'
+                    }`}></i>
                     <span>{faq.q}</span>
                   </span>
-                  <i
-                    className={`bi bi-chevron-down text-slate-400 font-bold transition-transform duration-300 flex-shrink-0 ${
-                      isOpen ? 'rotate-180 text-indigo-600' : ''
-                    }`}
-                  ></i>
+                  
+                  <div className={`faq-chevron-box ${isOpen ? 'rotate-180 bg-blue-50 text-blue-600' : 'text-slate-400'}`}>
+                    <i className="bi bi-chevron-down text-sm"></i>
+                  </div>
                 </button>
 
-                {isOpen && (
-                  <div className="faq-answer-panel">
-                    <p>{faq.a}</p>
+                {/* Contenedor animado con CSS Grid (despliegue suave) */}
+                <div className={`faq-answer-wrapper ${isOpen ? 'is-open' : ''}`}>
+                  <div className="faq-answer-inner">
+                    <div className="faq-answer-panel">
+                      <p className="faq-answer-text">{faq.a}</p>
+                    </div>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
-        </div>
-
-        {/* Still have questions */}
-        <div className="mt-12 text-center p-6 rounded-2xl bg-white border border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-center sm:text-left">
-            <h4 className="text-base font-bold text-slate-900">¿Tienes una pregunta específica sobre tu tesis?</h4>
-            <p className="text-xs sm:text-sm text-slate-500">Un asesor metodológico está en línea para responderte de inmediato.</p>
-          </div>
-          <a
-            href="https://wa.me/51999999999?text=Hola,%20tengo%20una%20consulta%20espec%C3%ADfica%20sobre%20mi%20tesis"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 text-white font-semibold text-sm hover:bg-indigo-700 shadow-sm transition-all"
-          >
-            <i className="bi bi-chat-text-fill"></i>
-            <span>Preguntar a un Asesor</span>
-          </a>
         </div>
 
       </div>

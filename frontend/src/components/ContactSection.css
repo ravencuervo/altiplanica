@@ -1,23 +1,36 @@
-/* ContactSection.css - Diseño con colores sólidos */
+/* ContactSection.css - Puro color azul casi oscuro sólido (#0f172a), sin gradientes */
 
-.contact-section {
+.contact-fullwidth-section {
   position: relative;
-  background-color: #ffffff;
-}
-
-.contact-hero-banner {
-  background-color: #0f172a; /* Solid Obsidian */
-  border-radius: 1.75rem;
-  border: 1px solid #1e293b;
-  position: relative;
+  width: 100%;
+  background-color: #0f172a; /* Azul casi oscuro sólido / Obsidian Navy */
+  border-top: 1px solid #1e293b;
+  border-bottom: 1px solid #1e293b;
 }
 
 .contact-submit-btn {
-  background-color: #1e40af; /* Solid Royal Blue */
-  transition: all 0.15s ease;
+  background-color: #1e40af; /* Azul sólido */
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 .contact-submit-btn:hover {
   background-color: #1d4ed8;
   transform: translateY(-2px);
+}
+
+.contact-submit-btn:active {
+  transform: translateY(0);
+}
+
+/* Optimización táctil para móviles */
+@media (max-width: 639px) {
+  .contact-fullwidth-section input,
+  .contact-fullwidth-section select,
+  .contact-fullwidth-section textarea {
+    font-size: 16px !important; /* Previene auto-zoom molesto en iOS Safari */
+  }
+
+  .contact-submit-btn:hover {
+    transform: none;
+  }
 }

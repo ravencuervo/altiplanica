@@ -60,9 +60,9 @@ export default function Posgrado() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header with EPG UNA Puno Official Logo */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pb-8 border-b border-slate-200">
-          <div className="flex items-center gap-4 text-center sm:text-left">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 p-2 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-6 pb-6 sm:pb-8 border-b border-slate-200">
+          <div className="flex items-center gap-3.5 sm:gap-4 text-left w-full sm:w-auto">
+            <div className="w-14 h-14 sm:w-20 sm:h-20 p-2 rounded-2xl bg-white border border-slate-200 shadow-xs flex items-center justify-center shrink-0">
               <img
                 src="/images/logos/logo_epg.svg"
                 alt="Logo Escuela de Posgrado UNA Puno"
@@ -70,10 +70,10 @@ export default function Posgrado() {
               />
             </div>
             <div>
-              <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-900 bg-indigo-50 px-2.5 py-1 rounded-md border border-indigo-200">
+              <span className="inline-block text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-indigo-900 bg-indigo-50 px-2.5 py-0.5 sm:py-1 rounded-md border border-indigo-200">
                 Escuela de Posgrado • EPG UNA Puno
               </span>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1.5 tracking-tight">
+              <h2 className="text-xl sm:text-3xl font-extrabold text-slate-900 mt-1 tracking-tight">
                 Posgrado UNA Puno
               </h2>
               <p className="text-slate-500 text-xs sm:text-sm mt-0.5">
@@ -82,8 +82,8 @@ export default function Posgrado() {
             </div>
           </div>
 
-          {/* Program Tabs */}
-          <div className="flex flex-wrap items-center justify-center gap-2 bg-slate-200/70 p-1.5 rounded-2xl border border-slate-300/50">
+          {/* Program Tabs - 3 columnas en móviles y en desktop para navegación inmediata */}
+          <div className="w-full sm:w-auto grid grid-cols-3 gap-1 sm:gap-1.5 bg-slate-200/70 p-1 sm:p-1.5 rounded-2xl border border-slate-300/50">
             {programasPosgrado.map((item) => {
               const isActive = activeTab === item.id;
               return (
@@ -95,8 +95,16 @@ export default function Posgrado() {
                     isActive ? 'posgrado-tab-active' : 'posgrado-tab-inactive'
                   }`}
                 >
-                  <i className={`bi ${item.icon} text-base`}></i>
-                  <span>{item.title}</span>
+                  <i className={`bi ${item.icon} text-xs sm:text-base shrink-0`}></i>
+                  <span className="text-[11px] sm:text-xs font-bold leading-tight text-center">
+                    {item.id === 'especialidad' ? (
+                      <>
+                        <span className="hidden sm:inline">Segunda </span>Especialidad
+                      </>
+                    ) : (
+                      item.title
+                    )}
+                  </span>
                 </button>
               );
             })}
@@ -104,8 +112,8 @@ export default function Posgrado() {
         </div>
 
         {/* Content Card */}
-        <div className="posgrado-card mt-8 p-6 sm:p-8">
-          <div className="grid md:grid-cols-12 gap-8 items-center">
+        <div className="posgrado-card mt-6 sm:mt-8 p-4 sm:p-8">
+          <div className="grid md:grid-cols-12 gap-6 md:gap-8 items-start">
             
             {/* Left: Summary and Tags */}
             <div className="md:col-span-5 space-y-4">
@@ -114,12 +122,12 @@ export default function Posgrado() {
                 {current.badge}
               </span>
 
-              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
+              <h3 className="text-lg sm:text-2xl font-bold text-slate-900 leading-snug">
                 {current.summary}
               </h3>
 
               {/* Tags / Pills */}
-              <div className="flex flex-wrap gap-2 pt-1">
+              <div className="flex flex-wrap gap-1.5 sm:gap-2 pt-1">
                 {current.pills.map((pill, idx) => (
                   <span key={idx} className="posgrado-pill">
                     <i className="bi bi-award text-indigo-600 text-[10px]"></i>
@@ -130,9 +138,10 @@ export default function Posgrado() {
             </div>
 
             {/* Right: Key Highlights */}
-            <div className="md:col-span-7 bg-slate-50 rounded-2xl p-5 sm:p-6 border border-slate-200">
-              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">
-                Puntos clave del acompañamiento
+            <div className="md:col-span-7 bg-slate-50 rounded-2xl p-4 sm:p-6 border border-slate-200">
+              <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-1.5">
+                <i className="bi bi-check2-circle text-indigo-700"></i>
+                <span>Puntos clave del acompañamiento</span>
               </h4>
               <ul className="space-y-3">
                 {current.highlights.map((point, idx) => (
@@ -140,7 +149,7 @@ export default function Posgrado() {
                     <span className="w-5 h-5 rounded-full bg-indigo-100 text-indigo-900 flex items-center justify-center text-xs mt-0.5 shrink-0 font-bold border border-indigo-200">
                       <i className="bi bi-check"></i>
                     </span>
-                    <span className="text-slate-700 leading-snug">{point}</span>
+                    <span className="text-slate-700 text-xs sm:text-sm leading-relaxed">{point}</span>
                   </li>
                 ))}
               </ul>
@@ -149,11 +158,13 @@ export default function Posgrado() {
           </div>
 
           {/* Banner: Titulación / Graduación por Artículo Científico en Posgrado */}
-          <div className="posgrado-article-banner mt-6 flex items-center gap-3">
-            <i className="bi bi-journal-richtext text-indigo-700 text-xl shrink-0"></i>
-            <div className="text-xs sm:text-sm text-indigo-950">
-              <strong className="font-bold text-indigo-900 mr-1">Titulación por Artículo en Posgrado:</strong>
-              En la EPG UNA Puno puedes optar al grado mediante la publicación de artículos científicos en revistas indexadas (Scopus / Web of Science). Te asesoramos en la redacción, sumisión y subsanación de arbitraje.
+          <div className="posgrado-article-banner mt-6 flex flex-col sm:flex-row items-start sm:items-center gap-2.5 sm:gap-3 p-3.5 sm:p-4">
+            <div className="flex items-center gap-2 text-indigo-900 font-bold text-xs sm:text-sm shrink-0">
+              <i className="bi bi-journal-richtext text-indigo-700 text-lg"></i>
+              <span>Titulación por Artículo:</span>
+            </div>
+            <div className="text-xs sm:text-sm text-indigo-950 leading-relaxed">
+              En la EPG UNA Puno puedes optar al grado mediante la publicación de artículos científicos en revistas indexadas (Scopus / Web of Science). Te asesoramos en redacción y arbitraje editorial.
             </div>
           </div>
         </div>

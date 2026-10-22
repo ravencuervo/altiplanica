@@ -1,31 +1,159 @@
-/* ToolsSection.css */
+/* ToolsSection.css - Secciones a todo el ancho, sin bordes en los items de software */
 .tools-section {
   position: relative;
-  background-color: #f1f5f9;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  background-color: #f8fafc;
 }
 
-.tool-card {
+/* Cada sección ocupa el 100% del ancho de la ventana */
+.tools-fullwidth-section {
   background-color: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 1rem;
-  padding: 1.25rem;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-  transition: all 0.25s ease;
+  position: relative;
+  transition: background-color 0.2s ease;
 }
 
-.tool-card:hover {
+/* Envoltura con máscara de desvanecimiento suave a los extremos de la pantalla */
+.marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 3%,
+    rgba(0, 0, 1) 97%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 1) 3%,
+    rgba(0, 0, 1) 97%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.marquee-track-container {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  will-change: transform;
+}
+
+/* 1. Animación continua hacia la IZQUIERDA (0 -> -50%) */
+.animate-marquee-left {
+  animation: scrollTrackLeft 36s linear infinite;
+}
+
+/* 2. Animación continua hacia la DERECHA (-50% -> 0) */
+.animate-marquee-right {
+  animation: scrollTrackRight 36s linear infinite;
+}
+
+@keyframes scrollTrackLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scrollTrackRight {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Item de software: SIN BORDES NI CUADRÍCULAS, diseño limpio y flotante */
+.tool-logo-card {
+  width: 11.5rem; /* ~184px */
+  flex-shrink: 0;
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  padding: 0.5rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.625rem;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.tool-logo-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 10px 20px -5px rgba(0, 0, 0, 0.08);
-  border-color: #cbd5e1;
+  border: none;
+  box-shadow: none;
 }
 
-.tool-icon-wrapper {
-  transition: all 0.25s ease;
+/* Caja de la imagen / logo flotante */
+.tool-logo-box {
+  width: 4rem; /* 64px */
+  height: 4rem;
+  border-radius: 1.15rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 0.5rem;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
+  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06);
 }
 
-.tool-card:hover .tool-icon-wrapper {
-  background-color: #4f46e5;
-  color: #ffffff;
+.tool-logo-card:hover .tool-logo-box {
+  transform: scale(1.1);
+  box-shadow: 0 10px 22px -4px rgba(15, 23, 42, 0.12);
+}
+
+.tool-logo-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: transform 0.2s ease;
+}
+
+.tool-logo-fallback {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 640px) {
+  .tool-logo-card {
+    width: 9.5rem;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .tool-logo-box {
+    width: 3.25rem;
+    height: 3.25rem;
+    border-radius: 0.875rem;
+    padding: 0.35rem;
+  }
+
+  .marquee-track {
+    gap: 1.25rem;
+  }
+
+  .animate-marquee-left {
+    animation-duration: 25s;
+  }
+
+  .animate-marquee-right {
+    animation-duration: 25s;
+  }
 }

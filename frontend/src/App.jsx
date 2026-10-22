@@ -6,7 +6,6 @@ import Pregrado from './components/Pregrado';
 import Posgrado from './components/Posgrado';
 import Methodology from './components/Methodology';
 import ToolsSection from './components/ToolsSection';
-import Testimonials from './components/Testimonials';
 import FAQ from './components/FAQ';
 import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
@@ -48,11 +47,6 @@ export default function App() {
         {/* Software Científico y Estándares Internacionales */}
         <ScrollReveal direction="up" delay={100}>
           <ToolsSection />
-        </ScrollReveal>
-
-        {/* Casos de Éxito y Testimonios de Tesistas */}
-        <ScrollReveal direction="up" delay={100}>
-          <Testimonials />
         </ScrollReveal>
 
         {/* 7. Preguntas Frecuentes */}

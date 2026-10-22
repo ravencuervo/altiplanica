@@ -4,8 +4,8 @@ import './Methodology.css';
 const stepsData = [
   {
     step: '01',
-    badge: '100% Free • Sin Costo',
-    badgeClass: 'bg-emerald-50 text-emerald-800 border border-emerald-200',
+    badge: '100% Gratuito • Sin Costo',
+    badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
     iconColor: 'text-emerald-600',
     title: 'Diagnóstico Inicial Gratuito',
     tagline: 'Evaluamos el estado de tu investigación sin costo alguno.',
@@ -21,7 +21,7 @@ const stepsData = [
   {
     step: '02',
     badge: 'Auditoría Metodológica',
-    badgeClass: 'bg-blue-50 text-blue-800 border border-blue-200',
+    badgeClass: 'bg-blue-50 text-blue-800 border-blue-200',
     iconColor: 'text-blue-600',
     title: 'Análisis y Entendimiento del Problema',
     tagline: 'Comprendemos a fondo las normativas y observaciones de tu facultad.',
@@ -37,7 +37,7 @@ const stepsData = [
   {
     step: '03',
     badge: 'Propuesta a la Medida',
-    badgeClass: 'bg-purple-50 text-purple-800 border border-purple-200',
+    badgeClass: 'bg-purple-50 text-purple-800 border-purple-200',
     iconColor: 'text-purple-600',
     title: 'Propuesta de Plan de Servicios a la Medida',
     tagline: 'Diseñamos una hoja de ruta con los servicios exactos que requieres.',
@@ -53,7 +53,7 @@ const stepsData = [
   {
     step: '04',
     badge: 'Gestión por Sistema',
-    badgeClass: 'bg-orange-50 text-orange-800 border border-orange-200',
+    badgeClass: 'bg-orange-50 text-orange-800 border-orange-200',
     iconColor: 'text-orange-600',
     title: 'Cronograma de Entregables por Nuestro Sistema',
     tagline: 'Seguimiento transparente de fases y fechas de entrega en plataforma.',
@@ -69,7 +69,7 @@ const stepsData = [
   {
     step: '05',
     badge: '100% Remoto • Google Meet',
-    badgeClass: 'bg-sky-50 text-sky-800 border border-sky-200',
+    badgeClass: 'bg-sky-50 text-sky-800 border-sky-200',
     iconColor: 'text-sky-600',
     title: 'Asesorías en Vivo vía Google Meet',
     tagline: 'Acompañamiento 1 a 1 para que domines cada parte de tu tesis.',
@@ -86,80 +86,108 @@ const stepsData = [
 
 export default function Methodology() {
   return (
-    <section id="metodologia" className="methodology-section py-16 sm:py-24 relative scroll-mt-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 sm:mb-20">
-          <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700 bg-blue-50 px-3.5 py-1.5 rounded-full border border-blue-200">
-            Nuestra Metodología
+    <section id="metodologia" className="methodology-section pt-16 sm:pt-20 pb-0 relative scroll-mt-20">
+      
+      {/* Encabezado General Centrado */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 text-center">
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 mb-3.5">
+          <i className="bi bi-diagram-3-fill text-blue-700 text-xs"></i>
+          <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700">
+            Nuestra Metodología de Acompañamiento
           </span>
-          <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 tracking-tight">
-            Paso a Paso Hacia tu Aprobación
-          </h2>
-          <p className="text-slate-600 mt-3 text-base sm:text-lg leading-relaxed">
-            Un proceso estructurado, transparente y gestionado por nuestro sistema para que avances con total seguridad en cada fase.
-          </p>
         </div>
 
-        {/* Zigzag Alternating Steps */}
-        <div className="methodology-steps-container">
-          {stepsData.map((item, index) => {
-            const isEven = index % 2 === 1; // 0-based: 1 (step 02) and 3 (step 04) are even
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          Paso a Paso Hacia tu Aprobación
+        </h2>
 
-            return (
-              <div key={item.step} className="methodology-row">
+        <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+          Un proceso estructurado, transparente y dividido en 5 etapas secuenciales para garantizar el rigor científico de tu tesis.
+        </p>
+      </div>
 
-                {/* Text Column (alternating on md+ screens) */}
-                <div className={`methodology-text-col ${isEven ? 'md:order-2' : 'md:order-1'}`}>
-                  <div className="flex items-center gap-3">
-                    <span className="text-3xl sm:text-4xl font-black text-slate-300">
-                      {item.step}
-                    </span>
-                    <span className={`methodology-step-pill ${item.badgeClass}`}>
-                      {item.badge}
-                    </span>
-                  </div>
+      {/* Bloques a Pantalla Completa Divididos por una Diagonal Pronunciada */}
+      <div className="w-full">
+        {stepsData.map((item, index) => {
+          const isEven = index % 2 === 1; // Alternancia zigzag
+          const isAltBg = index % 2 === 1; // Alternancia de color sólido de fondo
 
-                  <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
-                    {item.title}
-                  </h3>
+          return (
+            <div 
+              key={item.step} 
+              className={`methodology-step-band w-full border-t border-slate-200/90 ${
+                isAltBg ? 'bg-slate-50' : 'bg-white'
+              }`}
+            >
+              <div className="w-full grid lg:grid-cols-12 items-stretch min-h-[480px] lg:min-h-[520px]">
 
-                  <p className="text-blue-700 font-semibold text-sm sm:text-base leading-snug">
-                    {item.tagline}
-                  </p>
+                {/* Columna de Texto descriptivo con márgenes que respetan la grilla central */}
+                <div 
+                  className={`py-12 sm:py-16 px-6 sm:px-10 flex flex-col justify-center ${
+                    isEven 
+                      ? 'lg:col-span-6 lg:order-2 methodology-text-right' 
+                      : 'lg:col-span-6 lg:order-1 methodology-text-left'
+                  }`}
+                >
+                  <div className="max-w-xl w-full space-y-4">
+                    
+                    <div className="flex items-center gap-3">
+                      <span className="text-3xl sm:text-4xl font-black text-slate-300 font-mono">
+                        {item.step}
+                      </span>
+                      <span className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${item.badgeClass}`}>
+                        {item.badge}
+                      </span>
+                    </div>
 
-                  <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                    {item.description}
-                  </p>
+                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+                      {item.title}
+                    </h3>
 
-                  <div className="space-y-2.5 pt-2">
-                    {item.points.map((point, pIdx) => (
-                      <div key={pIdx} className="methodology-point">
-                        <i className={`bi bi-check-circle-fill text-sm ${item.iconColor}`}></i>
-                        <span>{point}</span>
-                      </div>
-                    ))}
+                    <p className="text-blue-700 font-semibold text-sm sm:text-base leading-snug">
+                      {item.tagline}
+                    </p>
+
+                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                      {item.description}
+                    </p>
+
+                    <div className="space-y-2.5 pt-2">
+                      {item.points.map((point, pIdx) => (
+                        <div key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                          <i className={`bi bi-check-circle-fill text-sm mt-0.5 shrink-0 ${item.iconColor}`}></i>
+                          <span className="leading-snug">{point}</span>
+                        </div>
+                      ))}
+                    </div>
+
                   </div>
                 </div>
 
-                {/* Image Column (alternating on md+ screens) */}
-                <div className={`methodology-img-col ${isEven ? 'md:order-1' : 'md:order-2'}`}>
-                  <div className="methodology-img-wrapper">
-                    <img
-                      src={item.image}
-                      alt={item.imageAlt}
-                      loading="lazy"
-                    />
-                  </div>
+                {/* Columna de Imagen a Todo el Espacio con Corte Diagonal Pronunciado */}
+                <div 
+                  className={`w-full h-full min-h-[340px] sm:min-h-[420px] lg:min-h-[520px] relative overflow-hidden ${
+                    isEven 
+                      ? 'lg:col-span-6 lg:order-1 methodology-diagonal-left' 
+                      : 'lg:col-span-6 lg:order-2 methodology-diagonal-right'
+                  }`}
+                >
+                  <img
+                    src={item.image}
+                    alt={item.imageAlt}
+                    loading="lazy"
+                    className="methodology-full-img w-full h-full object-cover transition-transform duration-500 ease-out"
+                  />
                 </div>
 
               </div>
-            );
-          })}
-        </div>
-
+            </div>
+          );
+        })}
+        {/* Borde inferior de cierre a todo el ancho */}
+        <div className="w-full border-t border-slate-200/90"></div>
       </div>
+
     </section>
   );
 }
