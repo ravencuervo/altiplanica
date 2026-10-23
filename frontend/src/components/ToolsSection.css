@@ -11,7 +11,7 @@
   transition: background-color 0.2s ease;
 }
 
-/* Envoltura con máscara de desvanecimiento suave a los extremos de la pantalla */
+/* Envoltura con máscara y difuminado pronunciado a los extremos de la pantalla */
 .marquee-wrapper {
   position: relative;
   width: 100%;
@@ -19,17 +19,63 @@
   -webkit-mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 3%,
-    rgba(0, 0, 1) 97%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
     rgba(0, 0, 0, 0) 100%
   );
   mask-image: linear-gradient(
     to right,
     rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 1) 3%,
-    rgba(0, 0, 1) 97%,
+    rgba(0, 0, 0, 1) 10%,
+    rgba(0, 0, 0, 1) 90%,
     rgba(0, 0, 0, 0) 100%
   );
+}
+
+/* Difuminado suave y elegante en ambos bordes laterales (efecto fade de transición) */
+.marquee-wrapper::before,
+.marquee-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 4.5rem;
+  z-index: 20;
+  pointer-events: none;
+}
+
+.marquee-wrapper::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.85) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.marquee-wrapper::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0.85) 45%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+@media (min-width: 640px) {
+  .marquee-wrapper::before,
+  .marquee-wrapper::after {
+    width: 7.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .marquee-wrapper::before,
+  .marquee-wrapper::after {
+    width: 11rem;
+  }
 }
 
 .marquee-track-container {
@@ -41,7 +87,7 @@
 
 .marquee-track {
   display: flex;
-  gap: 2rem;
+  gap: 2.25rem;
   width: max-content;
   will-change: transform;
 }
@@ -74,19 +120,19 @@
   }
 }
 
-/* Item de software: SIN BORDES NI CUADRÍCULAS, diseño limpio y flotante */
+/* Item de software: SIN BORDES NI CUADRÍCULAS, diseño limpio, espacioso y flotante */
 .tool-logo-card {
-  width: 11.5rem; /* ~184px */
+  width: 13rem; /* ~208px */
   flex-shrink: 0;
   background: transparent;
   border: none;
   box-shadow: none;
-  padding: 0.5rem 0.5rem;
+  padding: 0.75rem 0.5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.625rem;
+  gap: 0.75rem;
   cursor: pointer;
   transition: transform 0.25s ease;
 }
@@ -97,56 +143,92 @@
   box-shadow: none;
 }
 
-/* Caja de la imagen / logo flotante */
+/* Caja del logo flotante: más grande y espaciosa para máxima visibilidad */
 .tool-logo-box {
-  width: 4rem; /* 64px */
-  height: 4rem;
-  border-radius: 1.15rem;
+  width: 7.5rem; /* 120px */
+  height: 4.5rem; /* 72px */
   display: flex;
   align-items: center;
   justify-content: center;
-  overflow: hidden;
-  padding: 0.5rem;
-  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.25s ease;
-  box-shadow: 0 4px 12px -2px rgba(15, 23, 42, 0.06);
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  padding: 0.125rem 0.25rem;
+  transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
 .tool-logo-card:hover .tool-logo-box {
-  transform: scale(1.1);
-  box-shadow: 0 10px 22px -4px rgba(15, 23, 42, 0.12);
+  transform: scale(1.08);
+  box-shadow: none;
 }
 
+/* Logos en escala de grises por defecto, revelan sus colores reales al pasar el cursor */
 .tool-logo-img {
   width: 100%;
   height: 100%;
+  max-height: 4.25rem; /* Mayor altura para que los logos se vean nítidos y grandes */
+  max-width: 7.25rem;
   object-fit: contain;
-  transition: transform 0.2s ease;
+  filter: grayscale(100%);
+  opacity: 0.65;
+  transition: filter 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s ease;
 }
 
+.tool-logo-card:hover .tool-logo-img {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+/* Fallback icons en escala de grises por defecto, revelan color al hover */
 .tool-logo-fallback {
-  width: 100%;
-  height: 100%;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  filter: grayscale(100%);
+  opacity: 0.65;
+  transition: filter 0.35s ease, opacity 0.35s ease, transform 0.25s ease;
+}
+
+.tool-logo-card:hover .tool-logo-fallback {
+  filter: grayscale(0%);
+  opacity: 1;
+  transform: scale(1.08);
+}
+
+.tool-info h5 {
+  transition: color 0.25s ease;
+}
+
+.tool-logo-card:hover .tool-info h5 {
+  color: #2563eb;
 }
 
 /* Ajustes responsivos */
 @media (max-width: 640px) {
   .tool-logo-card {
-    width: 9.5rem;
+    width: 10.5rem;
     padding: 0.5rem 0.25rem;
+    gap: 0.5rem;
   }
 
   .tool-logo-box {
-    width: 3.25rem;
-    height: 3.25rem;
-    border-radius: 0.875rem;
-    padding: 0.35rem;
+    width: 6rem;
+    height: 3.75rem;
+    padding: 0;
+  }
+
+  .tool-logo-img {
+    max-height: 3.5rem;
+    max-width: 5.75rem;
   }
 
   .marquee-track {
-    gap: 1.25rem;
+    gap: 1.5rem;
   }
 
   .animate-marquee-left {

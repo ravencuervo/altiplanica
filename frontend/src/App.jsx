@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Services from './components/Services';
@@ -11,13 +11,58 @@ import ContactSection from './components/ContactSection';
 import Footer from './components/Footer';
 import FloatingWhatsApp from './components/FloatingWhatsApp';
 import ScrollReveal from './components/ScrollReveal';
+import TrackingPortal from './components/TrackingPortal';
 import './App.css';
 
 export default function App() {
+  const [currentView, setCurrentView] = useState(() => {
+    const path = window.location.pathname;
+    const hash = window.location.hash;
+    return path === '/login' || path === '/panel' || hash === '#login' || hash === '#portal'
+      ? 'portal'
+      : 'landing';
+  });
+
+  useEffect(() => {
+    // Si el usuario ingresó con hash antiguo, normalizar a la ruta limpia /login o /panel
+    if (window.location.hash === '#portal' || window.location.hash === '#login') {
+      window.history.replaceState({}, '', '/login');
+      setCurrentView('portal');
+    }
+
+    const handleLocationChange = () => {
+      const path = window.location.pathname;
+      if (path === '/login' || path === '/panel') {
+        setCurrentView('portal');
+      } else {
+        setCurrentView('landing');
+      }
+    };
+
+    window.addEventListener('popstate', handleLocationChange);
+    return () => window.removeEventListener('popstate', handleLocationChange);
+  }, []);
+
+  const handleOpenLogin = () => {
+    window.history.pushState({}, '', '/login');
+    setCurrentView('portal');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleBackToLanding = () => {
+    window.history.pushState({}, '', '/');
+    setCurrentView('landing');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  if (currentView === 'portal') {
+    return <TrackingPortal onBackToLanding={handleBackToLanding} />;
+  }
+
   return (
     <div className="app-wrapper font-sans selection:bg-blue-600 selection:text-white">
-      {/* 1. Barra de navegación fija */}
-      <Navbar />
+      {/* 1. Barra de navegación fija con botón al portal / login */}
+      <Navbar onOpenPortal={handleOpenLogin} />
 
       {/* 2. Contenido principal con animación de entrada (orden exacto del navbar) */}
       <main className="main-content">

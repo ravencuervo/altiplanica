@@ -22,7 +22,7 @@ const modalidadesPregrado = [
     title: 'Titulación por Artículo',
     badge: 'Modalidad Extraordinaria',
     icon: 'bi-file-earmark-text-fill',
-    badgeClass: 'bg-emerald-700 text-white',
+    badgeClass: 'bg-blue-700 text-white',
     summary: 'Titúlate más rápido publicando en revistas científicas indexadas (Scopus / SciELO).',
     pills: ['Vía Rápida', 'Scopus / SciELO', 'Formato IMRyD', 'Sin Trámite de Borrador'],
     highlights: [

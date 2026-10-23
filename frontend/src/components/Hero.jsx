@@ -36,7 +36,7 @@ export default function Hero() {
       {/* Interactive Statistical Dot Matrix Background */}
       <HeroPatternCanvas />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full my-auto py-3 sm:py-5">
         <div className="grid lg:grid-cols-12 gap-8 sm:gap-10 lg:gap-12 items-center">
 
           {/* Left Column: Headlines & CTA */}
@@ -101,30 +101,13 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* Right Column: 3D Interactive Model (Desktop only) and Credentials */}
-          <div className="lg:col-span-6 flex flex-col items-center w-full max-w-lg lg:max-w-none mx-auto mt-2 lg:mt-0">
-            {/* 3D Model: Desactivado en responsive para máxima fluidez y adaptabilidad */}
+          {/* Right Column: 3D Interactive Model (Desktop only) */}
+          <div className="lg:col-span-6 flex flex-col items-center justify-center w-full max-w-lg lg:max-w-none mx-auto">
             {isDesktop && (
               <div className="hidden lg:block w-full">
                 <Thesis3DViewer />
               </div>
             )}
-
-            {/* Stats badges directly beneath */}
-            <div className="w-full grid grid-cols-3 gap-2 sm:gap-3 mt-4 lg:mt-4">
-              <div className="hero-stats-badge">
-                <p className="text-[10px] sm:text-xs text-slate-500 font-medium truncate">Tesis Aprobadas</p>
-                <p className="text-sm sm:text-base md:text-xl font-bold text-slate-900 mt-0.5">+1,250</p>
-              </div>
-              <div className="hero-stats-badge">
-                <p className="text-[10px] sm:text-xs text-slate-500 font-medium truncate">Tasa de Éxito</p>
-                <p className="text-sm sm:text-base md:text-xl font-bold text-emerald-700 mt-0.5">99.6%</p>
-              </div>
-              <div className="hero-stats-badge">
-                <p className="text-[10px] sm:text-xs text-slate-500 font-medium truncate">Turnitin 0%</p>
-                <p className="text-sm sm:text-base md:text-xl font-bold text-blue-800 mt-0.5">Garantizado</p>
-              </div>
-            </div>
           </div>
 
         </div>

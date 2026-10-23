@@ -25,7 +25,7 @@ const levelsData = [
     title: 'Segunda Especialidad',
     badge: 'Especialización Práctica',
     icon: 'bi-hospital',
-    badgeColor: 'bg-teal-700 text-white',
+    badgeColor: 'bg-blue-700 text-white',
     description: 'Dirigido a profesionales en ejercicio (Médicos, Enfermeros, Odontólogos, Juristas, Docentes) que requieren trabajos de investigación clínica, aplicada o de gestión.',
     features: [
       'Informes de experiencia profesional o proyectos de mejora continua',
@@ -42,7 +42,7 @@ const levelsData = [
     title: 'Maestría (Posgrado)',
     badge: 'Alto Nivel Investigativo',
     icon: 'bi-award',
-    badgeColor: 'bg-indigo-700 text-white',
+    badgeColor: 'bg-blue-800 text-white',
     description: 'Para profesionales que buscan el grado de Magíster con un aporte teórico, analítico o aplicativo de alto impacto para la toma de decisiones.',
     features: [
       'Matriz de consistencia exhaustiva y estado del arte internacional',
@@ -59,7 +59,7 @@ const levelsData = [
     title: 'Doctorado (PhD)',
     badge: 'Rigor Epistemológico Máximo',
     icon: 'bi-gem',
-    badgeColor: 'bg-purple-800 text-white',
+    badgeColor: 'bg-blue-900 text-white',
     description: 'Acompañamiento especializado en tesis doctorales donde se exige originalidad epistémica, generación de nuevo conocimiento y modelos predictivos o estructurales.',
     features: [
       'Fundamentación epistemológica, ontológica y metodológica rigurosa',
@@ -180,7 +180,7 @@ export default function AcademicLevels() {
               <ul className="grid sm:grid-cols-2 gap-3.5">
                 {current.features.map((feature, idx) => (
                   <li key={idx} className="level-feature-item flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center text-xs mt-0.5 font-bold">
+                    <span className="flex-shrink-0 w-5 h-5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 flex items-center justify-center text-xs mt-0.5 font-bold">
                       <i className="bi bi-check"></i>
                     </span>
                     <span>{feature}</span>

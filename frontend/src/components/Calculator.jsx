@@ -61,7 +61,7 @@ export default function Calculator() {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-14">
           <div className="flex items-center justify-center gap-3 mb-3">
-            <span className="text-xs font-bold uppercase tracking-wider text-teal-300 bg-teal-950 border border-teal-800 px-3.5 py-1.5 rounded-full">
+            <span className="text-xs font-bold uppercase tracking-wider text-blue-300 bg-blue-950/80 border border-blue-800 px-3.5 py-1.5 rounded-full">
               Asesoría & Cotizador de Tesis
             </span>
 
@@ -205,7 +205,7 @@ export default function Calculator() {
                 </div>
                 <div className="flex justify-between text-xs sm:text-sm text-slate-300">
                   <span className="text-slate-400">Plazo aproximado:</span>
-                  <span className="font-semibold text-teal-400">{selectedService.time}</span>
+                  <span className="font-semibold text-blue-400">{selectedService.time}</span>
                 </div>
               </div>
 
@@ -220,8 +220,8 @@ export default function Calculator() {
 
                 {/* Installment breakdown callout */}
                 {installmentCount > 1 && (
-                  <div className="calc-installment-box flex items-center justify-center gap-2 text-xs text-teal-300">
-                    <i className="bi bi-wallet2 text-teal-400"></i>
+                  <div className="calc-installment-box flex items-center justify-center gap-2 text-xs text-blue-300">
+                    <i className="bi bi-wallet2 text-blue-400"></i>
                     <span>O en <strong>{installmentCount} cuotas</strong> de aprox <strong>{currencySymbol} {installmentAmount}</strong> según avances</span>
                   </div>
                 )}
@@ -234,7 +234,7 @@ export default function Calculator() {
               {/* Included perks */}
               <div className="space-y-2 mb-6">
                 <div className="flex items-center gap-2 text-xs text-slate-300">
-                  <i className="bi bi-shield-check text-emerald-400 text-sm"></i>
+                  <i className="bi bi-shield-check text-blue-400 text-sm"></i>
                   <span>Reporte de originalidad Turnitin incluido</span>
                 </div>
                 <div className="flex items-center gap-2 text-xs text-slate-300">
@@ -253,9 +253,9 @@ export default function Calculator() {
               href={getWhatsAppMessage()}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl font-bold text-sm sm:text-base text-white bg-emerald-600 hover:bg-emerald-500 transition-colors"
+              className="w-full inline-flex items-center justify-center gap-2.5 py-4 px-6 rounded-2xl font-bold text-sm sm:text-base text-white bg-[#0052ff] hover:bg-blue-600 shadow-lg shadow-blue-500/20 transition-all"
             >
-              <i className="bi bi-whatsapp text-xl"></i>
+              <i className="bi bi-whatsapp text-xl text-white"></i>
               <span>Enviar esta Cotización por WhatsApp</span>
             </a>
 

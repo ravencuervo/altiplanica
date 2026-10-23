@@ -75,7 +75,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
-                  <div className="w-9 h-9 rounded-lg bg-teal-950 text-teal-400 flex items-center justify-center text-base shrink-0 border border-teal-900/50">
+                  <div className="w-9 h-9 rounded-lg bg-blue-950 text-blue-400 flex items-center justify-center text-base shrink-0 border border-blue-900/50">
                     <i className="bi bi-mortarboard-fill"></i>
                   </div>
                   <div>
@@ -85,7 +85,7 @@ export default function ContactSection() {
                 </div>
 
                 <div className="flex items-center gap-3 p-3 rounded-xl bg-slate-800/80 border border-slate-700/60">
-                  <div className="w-9 h-9 rounded-lg bg-emerald-950 text-emerald-400 flex items-center justify-center text-base shrink-0 border border-emerald-900/50">
+                  <div className="w-9 h-9 rounded-lg bg-blue-950 text-blue-400 flex items-center justify-center text-base shrink-0 border border-blue-900/50">
                     <i className="bi bi-shield-lock-fill"></i>
                   </div>
                   <div>
@@ -101,7 +101,7 @@ export default function ContactSection() {
             <div className="lg:col-span-7 bg-white text-slate-900 rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-8 shadow-2xl border border-slate-100">
               {submitted ? (
                 <div className="text-center py-8 sm:py-10 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-emerald-100 text-emerald-700 mx-auto flex items-center justify-center text-3xl font-bold">
+                  <div className="w-16 h-16 rounded-full bg-blue-50 text-blue-700 border border-blue-200 mx-auto flex items-center justify-center text-3xl font-bold">
                     <i className="bi bi-check-lg"></i>
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-900">¡Solicitud Registrada con Éxito!</h3>
@@ -261,7 +261,7 @@ export default function ContactSection() {
                   </button>
 
                   <p className="text-[11px] text-slate-500 text-center pt-0.5">
-                    <i className="bi bi-shield-check text-emerald-600 mr-1"></i>
+                    <i className="bi bi-shield-check text-blue-600 mr-1"></i>
                     Tus datos son 100% confidenciales. Revisión preliminar sin costo ni compromiso.
                   </p>
                 </form>

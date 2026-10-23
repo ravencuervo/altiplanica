@@ -2,7 +2,7 @@
 
 .methodology-section {
   position: relative;
-  background-color: #ffffff;
+  background-color: #f0f6ff;
 }
 
 .methodology-step-band {
@@ -27,12 +27,30 @@
 }
 
 /* ========================================================
+   Capa de Tono Azul Claro para las Imágenes
+   ======================================================== */
+.methodology-image-tint {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(135deg, rgba(0, 82, 255, 0.22) 0%, rgba(56, 189, 248, 0.12) 50%, rgba(186, 230, 253, 0.25) 100%);
+  mix-blend-mode: color;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.methodology-img-container {
+  position: relative;
+  background-color: #e2edfd;
+}
+
+/* ========================================================
    1. DESKTOP (≥ 1024px): Corte diagonal pronunciado (20%)
    ======================================================== */
 @media (min-width: 1024px) {
   .methodology-diagonal-right {
     clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-    background-color: #f1f5f9;
+    background-color: #e2edfd;
     height: 100%;
     min-height: 520px;
     padding: 0;
@@ -40,10 +58,15 @@
 
   .methodology-diagonal-left {
     clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
-    background-color: #f1f5f9;
+    background-color: #e2edfd;
     height: 100%;
     min-height: 520px;
     padding: 0;
+  }
+
+  .methodology-img-container {
+    width: 100%;
+    height: 100%;
   }
 
   .methodology-full-img {
@@ -57,6 +80,7 @@
     box-shadow: none;
     padding: 0;
     display: block;
+    filter: grayscale(100%) sepia(100%) hue-rotate(185deg) saturate(320%) brightness(116%) contrast(88%);
     transition: transform 0.4s ease-out;
   }
 
@@ -66,7 +90,7 @@
 }
 
 /* ========================================================
-   2. RESPONSIVE (< 1024px): Imagen pura con bordes redondeados (sin cuadrícula ni bordes de caja)
+   2. RESPONSIVE (< 1024px): Imagen pura con bordes redondeados y tono azul claro
    ======================================================== */
 @media (max-width: 1023px) {
   .methodology-diagonal-right,
@@ -81,18 +105,27 @@
     clip-path: none;
   }
 
+  .methodology-img-container {
+    width: 100%;
+    max-width: 620px;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 82, 255, 0.08);
+  }
+
   .methodology-full-img {
     width: 100%;
     max-width: 620px;
     height: auto;
     max-height: 360px;
     object-fit: cover;
-    border-radius: 1.25rem; /* Solo bordes redondeados en la imagen */
-    border: none;           /* Sin cuadrícula ni bordes de caja */
-    background: transparent;/* Sin fondo de cuadrícula */
-    box-shadow: none;       /* Sin sombras de caja */
-    padding: 0;             /* Sin padding */
+    border-radius: 1.25rem;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    padding: 0;
     display: block;
+    filter: grayscale(100%) sepia(100%) hue-rotate(185deg) saturate(320%) brightness(116%) contrast(88%);
     transition: transform 0.25s ease;
   }
 
@@ -105,6 +138,10 @@
   .methodology-diagonal-right,
   .methodology-diagonal-left {
     padding: 0 2.5rem 3.5rem 2.5rem;
+  }
+
+  .methodology-img-container {
+    border-radius: 1.5rem;
   }
 
   .methodology-full-img {

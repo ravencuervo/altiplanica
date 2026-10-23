@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 
-export default function Navbar() {
+export default function Navbar({ onOpenPortal }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -19,6 +19,7 @@ export default function Navbar() {
     { name: 'Pregrado', href: '#pregrado' },
     { name: 'Posgrado', href: '#posgrado' },
     { name: 'Metodología', href: '#metodologia' },
+    { name: 'Software Especializado', href: '#software' },
     { name: 'Preguntas', href: '#preguntas' },
     { name: 'Contáctanos', href: '#contacto' },
   ];
@@ -35,28 +36,39 @@ export default function Navbar() {
               alt="TesisAltiplánica Logo"
               className="h-10 w-auto object-contain group-hover:scale-105 transition-transform"
             />
-            <div className="flex flex-col">
-              <span className="text-xl font-extrabold tracking-tight text-slate-900 group-hover:text-blue-700 transition-colors">
-                Tesis<span className="text-blue-700">Altiplánica</span>
+            <div className="flex flex-col text-left">
+              <span className="text-xl sm:text-2xl font-black tracking-tight text-slate-950 leading-none group-hover:text-blue-700 transition-colors">
+                Tesis<span className="text-[#0052ff]">Altiplánica</span>
               </span>
-              <span className="text-[10px] uppercase tracking-wider font-bold text-slate-500 -mt-1">
-                Consultoría de Tesis & Estadística
+              <span className="text-[10px] uppercase tracking-[0.14em] font-black text-slate-500 mt-1">
+                CONSULTORÍA DE TESIS & ESTADÍSTICA
               </span>
             </div>
           </a>
 
           {/* Desktop Navigation */}
-          <nav className="navbar-nav-pill hidden lg:flex items-center gap-0.5 xl:gap-1 px-2.5 xl:px-3 py-1.5 rounded-full">
+          <nav className="navbar-nav-pill hidden lg:flex items-center gap-0.5 xl:gap-1 px-2 xl:px-3 py-1.5 rounded-full">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="navbar-link px-2.5 xl:px-3 py-1 text-xs font-bold text-slate-700 hover:text-blue-700 rounded-full transition-colors whitespace-nowrap"
+                className="navbar-link px-2 xl:px-2.5 py-1 text-[11px] xl:text-xs font-bold text-slate-700 hover:text-blue-700 rounded-full transition-colors whitespace-nowrap"
               >
                 {link.name}
               </a>
             ))}
           </nav>
+
+          {/* Desktop Portal CTA */}
+          <div className="hidden lg:flex items-center">
+            <button
+              onClick={onOpenPortal}
+              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] xl:text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all hover:scale-105 active:scale-95 cursor-pointer"
+            >
+              <i className="bi bi-person-lock text-sm"></i>
+              <span>Portal del Tesista</span>
+            </button>
+          </div>
 
           {/* Mobile toggle */}
           <button
@@ -82,6 +94,16 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          <button
+            onClick={() => {
+              setMobileMenuOpen(false);
+              if (onOpenPortal) onOpenPortal();
+            }}
+            className="w-full flex items-center justify-center gap-2 mt-3 px-3 py-2.5 text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-xl transition-colors shadow-md"
+          >
+            <i className="bi bi-person-lock text-base"></i>
+            <span>Portal del Tesista (Seguimiento)</span>
+          </button>
         </div>
       )}
     </header>

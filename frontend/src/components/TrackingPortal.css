@@ -1,0 +1,296 @@
+/* Estilos para el Portal del Tesista / Sistema de Seguimiento Remoto (Tema Claro, Blanco y Azul, Sin Gradientes) */
+
+.portal-root {
+  min-height: 100vh;
+  background-color: #f8fafc;
+  color: #0f172a;
+  font-family: inherit;
+  position: relative;
+}
+
+/* Header superior del portal */
+.portal-navbar {
+  background: #ffffff;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* Pestañas del Navbar Interno del Panel */
+.portal-nav-tab {
+  padding: 0.5rem 1rem;
+  border-radius: 0.625rem;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+  cursor: pointer;
+}
+
+.portal-nav-tab-active {
+  background-color: #0052ff;
+  color: #ffffff;
+  box-shadow: 0 1px 2px rgba(0, 82, 255, 0.2);
+}
+
+.portal-nav-tab-inactive {
+  background-color: transparent;
+  color: #475569;
+}
+
+.portal-nav-tab-inactive:hover {
+  background-color: #f1f5f9;
+  color: #0f172a;
+}
+
+/* Tarjetas limpias en fondo blanco sin gradientes */
+.portal-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 0.875rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04), 0 1px 2px -1px rgba(0, 0, 0, 0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.portal-card:hover {
+  border-color: #cbd5e1;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Tarjetas del catálogo de selección de servicios (Paso 1) */
+.service-pick-card {
+  background: #ffffff;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 1rem;
+  padding: 1.25rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.service-pick-card:hover {
+  border-color: #0052ff;
+  box-shadow: 0 10px 15px -3px rgba(0, 82, 255, 0.08), 0 4px 6px -4px rgba(0, 82, 255, 0.04);
+  transform: translateY(-2px);
+}
+
+.service-pick-icon {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background-color: #eff6ff;
+  color: #0052ff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.service-pick-card:hover .service-pick-icon {
+  background-color: #0052ff;
+  color: #ffffff;
+}
+
+/* Insignias de velocidad sólida */
+.priority-badge-express {
+  background: #fef3c7;
+  border: 1px solid #fde68a;
+  color: #b45309;
+}
+
+.priority-badge-standard {
+  background: #eff6ff;
+  border: 1px solid #dbeafe;
+  color: #1d4ed8;
+}
+
+/* Timeline de pasos de tesis */
+.milestone-track {
+  position: relative;
+}
+
+.milestone-track::before {
+  content: '';
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  bottom: 2rem;
+  width: 2px;
+  background: #e2e8f0;
+  z-index: 1;
+}
+
+.milestone-item {
+  position: relative;
+  z-index: 2;
+  transition: transform 0.15s ease;
+}
+
+.milestone-icon-wrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: #ffffff;
+}
+
+.milestone-icon-completed {
+  background: #ecfdf5;
+  border: 2px solid #10b981;
+  color: #047857;
+}
+
+.milestone-icon-locked {
+  background: #fffbeb;
+  border: 2px solid #f59e0b;
+  color: #d97706;
+}
+
+.milestone-icon-pending {
+  background: #f8fafc;
+  border: 2px solid #cbd5e1;
+  color: #94a3b8;
+}
+
+/* Botones con colores sólidos planos (sin gradientes) */
+.btn-unlock-payment {
+  background-color: #d97706;
+  color: #ffffff;
+  font-weight: 700;
+  transition: background-color 0.15s ease;
+}
+
+.btn-unlock-payment:hover {
+  background-color: #b45309;
+}
+
+.btn-download-active {
+  background-color: #059669;
+  color: #ffffff;
+  font-weight: 700;
+  transition: background-color 0.15s ease;
+}
+
+.btn-download-active:hover {
+  background-color: #047857;
+}
+
+/* Botón oficial de Google */
+.btn-google {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #334155;
+  font-weight: 600;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-google:hover {
+  background-color: #f8fafc;
+  border-color: #94a3b8;
+  color: #0f172a;
+}
+
+/* Modal de pagos */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.payment-modal-box {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 1rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 580px;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* Pestañas de método de pago */
+.payment-tab-active {
+  background: #0052ff;
+  color: #ffffff;
+  border-color: #0052ff;
+}
+
+.payment-tab-inactive {
+  background: #f8fafc;
+  color: #64748b;
+  border-color: #e2e8f0;
+}
+
+.payment-tab-inactive:hover {
+  background: #f1f5f9;
+  color: #1e293b;
+}
+
+/* Cuadro de copiado */
+.copy-badge-btn {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #0052ff;
+  transition: all 0.15s ease;
+}
+
+.copy-badge-btn:hover {
+  background: #0052ff;
+  color: #ffffff;
+}
+
+/* Zona de Carga de Archivo de Tesis (Paso 1 Alumno Nuevo) */
+.upload-dropzone {
+  background-color: #ffffff;
+  border: 2px dashed #cbd5e1;
+  border-radius: 0.875rem;
+  padding: 1.5rem;
+  text-align: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.upload-dropzone:hover {
+  border-color: #0052ff;
+  background-color: #f8fafc;
+}
+
+.upload-dropzone-active {
+  border-color: #10b981;
+  background-color: #f0fdf4;
+}
+
+/* Insignias de servicio destacado */
+.service-badge-popular {
+  background-color: #0052ff;
+  color: #ffffff;
+  font-size: 0.625rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+/* Conmutador de modo para demostración */
+.mode-toggle-btn {
+  padding: 0.35rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  transition: all 0.15s ease;
+}

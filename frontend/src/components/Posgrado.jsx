@@ -7,7 +7,7 @@ const programasPosgrado = [
     title: 'Segunda Especialidad',
     badge: 'Especialización EPG',
     icon: 'bi-hospital-fill',
-    badgeClass: 'bg-teal-700 text-white',
+    badgeClass: 'bg-blue-700 text-white',
     summary: 'Proyectos clínicos, aplicados y epidemiológicos para especialistas.',
     pills: ['Residentado Médico', 'Enfermería', 'Comité de Ética', 'Vancouver / APA'],
     highlights: [
@@ -22,7 +22,7 @@ const programasPosgrado = [
     title: 'Maestría',
     badge: 'Grado de Magíster',
     icon: 'bi-award-fill',
-    badgeClass: 'bg-indigo-700 text-white',
+    badgeClass: 'bg-blue-800 text-white',
     summary: 'Modelos explicativos, análisis multivariado y titulación por artículo o tesis.',
     pills: ['Tesis Explicativa', 'Graduación por Artículo', 'SPSS / R / Stata', 'Scopus / SciELO'],
     highlights: [
@@ -37,7 +37,7 @@ const programasPosgrado = [
     title: 'Doctorado (PhD)',
     badge: 'Rigor Epistemológico',
     icon: 'bi-gem',
-    badgeClass: 'bg-purple-800 text-white',
+    badgeClass: 'bg-blue-900 text-white',
     summary: 'Generación de nuevo conocimiento, ecuaciones estructurales y artículos Scopus/WoS.',
     pills: ['PLS-SEM / AMOS', 'Atlas.ti 23', 'Artículos Scopus Q1-Q4', 'Docentes RENACYT'],
     highlights: [

@@ -57,51 +57,51 @@ const sectionsData = [
       {
         name: 'IBM SPSS Statistics',
         tag: 'Estadística',
-        image: '/images/tools/spss.png',
+        image: '/images/logos_software/7.svg',
         fallbackIcon: 'bi-bar-chart-line-fill',
-        accentBg: 'bg-blue-50 text-blue-600',
+        accentBg: '',
       },
       {
         name: 'R & RStudio',
         tag: 'Bioestadística & Data',
-        image: '/images/tools/rstudio.png',
+        image: '/images/logos_software/6.svg',
         fallbackIcon: 'bi-code-slash',
-        accentBg: 'bg-blue-50 text-blue-600',
+        accentBg: '',
       },
       {
         name: 'Python',
         tag: 'Data Science',
-        image: '/images/tools/python.png',
+        image: '/images/logos_software/5.svg',
         fallbackIcon: 'bi-terminal-fill',
-        accentBg: 'bg-blue-50 text-blue-600',
+        accentBg: '',
       },
       {
         name: 'EViews',
         tag: 'Econometría',
-        image: '/images/tools/eviews.png',
+        image: '/images/logos_software/4.svg',
         fallbackIcon: 'bi-graph-up-arrow',
-        accentBg: 'bg-blue-50 text-blue-600',
+        accentBg: '',
       },
       {
         name: 'Minitab',
         tag: 'Ingeniería & Calidad',
-        image: '/images/tools/minitab.png',
+        image: '/images/logos_software/3.svg',
         fallbackIcon: 'bi-sliders2',
-        accentBg: 'bg-blue-50 text-blue-600',
+        accentBg: '',
       },
       {
         name: 'MATLAB',
         tag: 'Modelamiento Numérico',
-        image: '/images/tools/matlab.png',
+        image: '/images/logos_software/2.svg',
         fallbackIcon: 'bi-cpu-fill',
-        accentBg: 'bg-blue-50 text-blue-600',
+        accentBg: '',
       },
       {
         name: 'Stata',
         tag: 'Econometría & Salud',
-        image: '/images/tools/stata.png',
+        image: '/images/logos_software/1.svg',
         fallbackIcon: 'bi-calculator-fill',
-        accentBg: 'bg-blue-50 text-blue-600',
+        accentBg: '',
       },
     ]
   },
@@ -111,35 +111,35 @@ const sectionsData = [
     subtitle: 'Modelos de vanguardia aplicados al razonamiento metodológico, síntesis analítica y parafraseo académico.',
     direction: 'left', // Izquierda
     badge: '3. Inteligencia Artificial',
-    badgeColor: 'bg-emerald-50 text-emerald-700 border-emerald-200',
+    badgeColor: 'bg-blue-50 text-blue-700 border-blue-200',
     tools: [
       {
         name: 'GPT Plus',
         tag: 'GPT-5.5 / GPT-5.6 Sol',
-        image: '/images/tools/gpt.png',
+        image: '/images/logos_software_ia/1.svg',
         fallbackIcon: 'bi-robot',
-        accentBg: 'bg-emerald-50 text-emerald-600',
+        accentBg: '',
       },
       {
         name: 'Claude Pro',
         tag: 'Claude Sonnet 5 / Opus 4.8',
-        image: '/images/tools/claude.png',
+        image: '/images/logos_software_ia/2.svg',
         fallbackIcon: 'bi-stars',
-        accentBg: 'bg-emerald-50 text-emerald-600',
+        accentBg: '',
       },
       {
         name: 'Gemini Pro',
         tag: 'Gemini Argon',
-        image: '/images/tools/gemini.png',
+        image: '/images/logos_software_ia/3.svg',
         fallbackIcon: 'bi-lightning-charge-fill',
-        accentBg: 'bg-emerald-50 text-emerald-600',
+        accentBg: '',
       },
       {
         name: 'QuillBot Premium',
         tag: 'Parafraseo y Estilo',
-        image: '/images/tools/quillbot.png',
+        image: '/images/logos_software_ia/4.svg',
         fallbackIcon: 'bi-feather',
-        accentBg: 'bg-emerald-50 text-emerald-600',
+        accentBg: '',
       },
     ]
   },
@@ -149,63 +149,63 @@ const sectionsData = [
     subtitle: 'Gestores de citas automatizados, bases de datos indexadas y plataformas de recuperación científica.',
     direction: 'right', // Derecha
     badge: '4. Fuentes & Búsqueda',
-    badgeColor: 'bg-amber-50 text-amber-700 border-amber-200',
+    badgeColor: 'bg-blue-50 text-blue-700 border-blue-200',
     tools: [
       {
         name: 'Mendeley',
         tag: 'Gestor Bibliográfico',
-        image: '/images/tools/mendeley.png',
+        image: '/images/logos_bibliografia/1.svg',
         fallbackIcon: 'bi-journals',
-        accentBg: 'bg-amber-50 text-amber-600',
+        accentBg: '',
       },
       {
         name: 'Zotero',
         tag: 'Gestor de Citas',
-        image: '/images/tools/zotero.png',
+        image: '/images/logos_bibliografia/2.svg',
         fallbackIcon: 'bi-bookmark-check-fill',
-        accentBg: 'bg-amber-50 text-amber-600',
+        accentBg: '',
       },
       {
         name: 'Scopus',
         tag: 'Indexación Global',
-        image: '/images/tools/scopus.png',
+        image: '/images/logos_bibliografia/3.svg',
         fallbackIcon: 'bi-globe2',
-        accentBg: 'bg-amber-50 text-amber-600',
+        accentBg: '',
       },
       {
         name: 'Web of Science (WoS)',
         tag: 'Bases de Alto Impacto',
-        image: '/images/tools/wos.png',
+        image: '/images/logos_bibliografia/4.svg',
         fallbackIcon: 'bi-trophy-fill',
-        accentBg: 'bg-amber-50 text-amber-600',
+        accentBg: '',
       },
       {
         name: 'Latindex',
         tag: 'Bases Regionales',
-        image: '/images/tools/latindex.png',
+        image: '/images/logos_bibliografia/5.svg',
         fallbackIcon: 'bi-journals',
-        accentBg: 'bg-amber-50 text-amber-600',
-      },
-      {
-        name: 'Repositorios Universitarios',
-        tag: 'Tesis Validadas',
-        image: '/images/tools/repositorio.png',
-        fallbackIcon: 'bi-building',
-        accentBg: 'bg-amber-50 text-amber-600',
+        accentBg: '',
       },
       {
         name: 'ScienceDirect',
         tag: 'Búsqueda Científica',
-        image: '/images/tools/sciencedirect.png',
+        image: '/images/logos_bibliografia/6.svg',
         fallbackIcon: 'bi-search',
-        accentBg: 'bg-amber-50 text-amber-600',
+        accentBg: '',
       },
       {
-        name: 'Boriumh',
+        name: 'Bohrium',
         tag: 'Motor Especializado',
-        image: '/images/tools/boriumh.png',
+        image: '/images/logos_bibliografia/7.svg',
         fallbackIcon: 'bi-compass-fill',
-        accentBg: 'bg-amber-50 text-amber-600',
+        accentBg: '',
+      },
+      {
+        name: 'Repositorios Universitarios',
+        tag: 'Tesis Validadas',
+        image: null,
+        fallbackIcon: 'bi-building-check',
+        accentBg: 'bg-blue-50 text-blue-600',
       },
     ]
   },
@@ -215,21 +215,21 @@ const sectionsData = [
     subtitle: 'Maquetación institucional y tipografía científica según normas editoriales de la UNA Puno.',
     direction: 'left', // Izquierda
     badge: '5. Edición & Formato',
-    badgeColor: 'bg-cyan-50 text-cyan-700 border-cyan-200',
+    badgeColor: 'bg-blue-50 text-blue-700 border-blue-200',
     tools: [
       {
         name: 'Microsoft Word Office',
         tag: 'Directivas UNA Puno',
-        image: '/images/tools/word.png',
+        image: '/images/logos_texto/2.svg',
         fallbackIcon: 'bi-file-earmark-word-fill',
-        accentBg: 'bg-cyan-50 text-cyan-600',
+        accentBg: '',
       },
       {
         name: 'LaTeX',
         tag: 'Tipografía Científica TeX',
-        image: '/images/tools/latex.png',
+        image: '/images/logos_texto/1.svg',
         fallbackIcon: 'bi-file-earmark-code-fill',
-        accentBg: 'bg-cyan-50 text-cyan-600',
+        accentBg: '',
       },
     ]
   }
@@ -248,7 +248,8 @@ function getRepeatedTools(tools) {
 
 export default function ToolsSection() {
   return (
-    <section id="herramientas" className="tools-section py-16 sm:py-20 overflow-hidden">
+    <section id="software" className="tools-section py-16 sm:py-20 overflow-hidden relative">
+      <div id="herramientas" className="absolute -top-24 pointer-events-none"></div>
       
       {/* Encabezado General Centrado */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 text-center">
@@ -276,72 +277,74 @@ export default function ToolsSection() {
 
           return (
             <div key={section.id} className="tools-fullwidth-section w-full border-t border-slate-200/80 py-7 sm:py-9">
-              
-              {/* Encabezado Específico de cada Sección con su Subtítulo */}
-              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4 sm:mb-5">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md border ${section.badgeColor}`}>
-                    {section.badge}
-                  </span>
-                  <h4 className="text-base sm:text-lg font-bold text-slate-900">
-                    {section.title}
-                  </h4>
+              <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                {/* Encabezado Específico de cada Sección con su Subtítulo */}
+                <div className="mb-4 sm:mb-5">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-md border ${section.badgeColor}`}>
+                      {section.badge}
+                    </span>
+                    <h4 className="text-base sm:text-lg font-bold text-slate-900">
+                      {section.title}
+                    </h4>
+                  </div>
+                  <p className="text-xs sm:text-sm text-slate-500">
+                    {section.subtitle}
+                  </p>
                 </div>
-                <p className="text-xs sm:text-sm text-slate-500">
-                  {section.subtitle}
-                </p>
-              </div>
 
-              {/* Riel Continuo sin bordes en los items de software */}
-              <div className="marquee-wrapper w-full">
-                <div className="marquee-track-container">
-                  <div 
-                    className={`marquee-track ${
-                      isDirectionLeft ? 'animate-marquee-left' : 'animate-marquee-right'
-                    }`}
-                  >
-                    {repeatedItems.map((tool, tIdx) => (
-                      <div key={tIdx} className="tool-logo-card">
-                        {/* Contenedor de Imagen Flotante Sin Bordes Cuadriculados */}
-                        <div className={`tool-logo-box ${tool.accentBg}`}>
-                          {tool.image && (
-                            <img 
-                              src={tool.image} 
-                              alt={tool.name} 
-                              className="tool-logo-img"
-                              onError={(e) => {
-                                e.currentTarget.style.display = 'none';
-                                if (e.currentTarget.nextElementSibling) {
-                                  e.currentTarget.nextElementSibling.style.display = 'flex';
-                                }
-                              }}
-                            />
-                          )}
-                          <div 
-                            className="tool-logo-fallback"
-                            style={{ display: tool.image ? 'none' : 'flex' }}
-                          >
-                            <i className={`bi ${tool.fallbackIcon} text-2xl sm:text-3xl`}></i>
+                {/* Riel Continuo sin bordes en los items de software - Respetando el ancho del contenedor normal */}
+                <div className="marquee-wrapper w-full">
+                  <div className="marquee-track-container">
+                    <div 
+                      className={`marquee-track ${
+                        isDirectionLeft ? 'animate-marquee-left' : 'animate-marquee-right'
+                      }`}
+                    >
+                      {repeatedItems.map((tool, tIdx) => (
+                        <div key={tIdx} className="tool-logo-card">
+                          {/* Contenedor de Imagen Flotante Sin Bordes Cuadriculados */}
+                          <div className={`tool-logo-box ${tool.accentBg}`}>
+                            {tool.image && (
+                              <img 
+                                src={tool.image} 
+                                alt={tool.name} 
+                                className="tool-logo-img"
+                                onError={(e) => {
+                                  e.currentTarget.style.display = 'none';
+                                  if (e.currentTarget.nextElementSibling) {
+                                    e.currentTarget.nextElementSibling.style.display = 'flex';
+                                  }
+                                }}
+                              />
+                            )}
+                            <div 
+                              className="tool-logo-fallback"
+                              style={{ display: tool.image ? 'none' : 'flex' }}
+                            >
+                              <i className={`bi ${tool.fallbackIcon} text-2xl sm:text-3xl`}></i>
+                            </div>
+                          </div>
+
+                          {/* Título y Etiqueta del Software */}
+                          <div className="tool-info text-center min-w-0 w-full px-1">
+                            <h5 className="text-xs sm:text-sm font-bold text-slate-900 truncate" title={tool.name}>
+                              {tool.name}
+                            </h5>
+                            {tool.tag && (
+                              <span className="text-[10px] font-medium text-slate-500 truncate block mt-0.5">
+                                {tool.tag}
+                              </span>
+                            )}
                           </div>
                         </div>
-
-                        {/* Título y Etiqueta del Software */}
-                        <div className="tool-info text-center min-w-0 w-full px-1">
-                          <h5 className="text-xs sm:text-sm font-bold text-slate-900 truncate" title={tool.name}>
-                            {tool.name}
-                          </h5>
-                          {tool.tag && (
-                            <span className="text-[10px] font-medium text-slate-500 truncate block mt-0.5">
-                              {tool.tag}
-                            </span>
-                          )}
-                        </div>
-                      </div>
-                    ))}
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
 
+              </div>
             </div>
           );
         })}

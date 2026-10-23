@@ -71,7 +71,7 @@ export default function Footer() {
                 href="https://wa.me/51958274958" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="footer-social-link hover:bg-emerald-600 hover:border-emerald-500" 
+                className="footer-social-link hover:bg-blue-600 hover:border-blue-500" 
                 aria-label="WhatsApp"
               >
                 <i className="bi bi-whatsapp"></i>
@@ -115,7 +115,7 @@ export default function Footer() {
                 </a>
               </li>
               <li className="flex items-center gap-2">
-                <i className="bi bi-whatsapp text-emerald-500"></i>
+                <i className="bi bi-whatsapp text-blue-400"></i>
                 <a href="https://wa.me/51958274958" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
                   +51 958 274 958
                 </a>

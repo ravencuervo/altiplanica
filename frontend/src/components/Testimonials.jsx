@@ -65,7 +65,7 @@ export default function Testimonials() {
                       <i key={i} className="bi bi-star-fill"></i>
                     ))}
                   </div>
-                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-indigo-100 text-indigo-800">
+                  <span className="text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-800 border border-blue-200">
                     {item.tag}
                   </span>
                 </div>
@@ -79,9 +79,9 @@ export default function Testimonials() {
                 <div>
                   <h4 className="text-sm font-bold text-slate-900">{item.name}</h4>
                   <p className="text-xs text-slate-500 font-medium">{item.degree}</p>
-                  <p className="text-[11px] text-indigo-600 font-semibold mt-0.5">{item.service}</p>
+                  <p className="text-[11px] text-blue-700 font-semibold mt-0.5">{item.service}</p>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-emerald-100 text-emerald-700 flex items-center justify-center text-lg flex-shrink-0">
+                <div className="w-10 h-10 rounded-full bg-blue-50 text-blue-700 border border-blue-200 flex items-center justify-center text-lg flex-shrink-0">
                   <i className="bi bi-check-circle-fill"></i>
                 </div>
               </div>

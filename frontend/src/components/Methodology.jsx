@@ -5,8 +5,8 @@ const stepsData = [
   {
     step: '01',
     badge: '100% Gratuito • Sin Costo',
-    badgeClass: 'bg-emerald-50 text-emerald-800 border-emerald-200',
-    iconColor: 'text-emerald-600',
+    badgeClass: 'bg-white text-blue-700 border-blue-200 shadow-2xs',
+    iconColor: 'text-[#0052ff]',
     title: 'Diagnóstico Inicial Gratuito',
     tagline: 'Evaluamos el estado de tu investigación sin costo alguno.',
     description: 'Envíanos tu tema, borrador, matriz de consistencia o base de datos. Un asesor metodológico revisa la situación de tu proyecto para identificar exactamente qué necesitas y cómo resolverlo.',
@@ -21,8 +21,8 @@ const stepsData = [
   {
     step: '02',
     badge: 'Auditoría Metodológica',
-    badgeClass: 'bg-blue-50 text-blue-800 border-blue-200',
-    iconColor: 'text-blue-600',
+    badgeClass: 'bg-white text-blue-700 border-blue-200 shadow-2xs',
+    iconColor: 'text-[#0052ff]',
     title: 'Análisis y Entendimiento del Problema',
     tagline: 'Comprendemos a fondo las normativas y observaciones de tu facultad.',
     description: 'Auditamos las observaciones de tus jurados dictaminantes, la directiva de grados de tu universidad y el alcance técnico que se requiere para lograr una investigación viable y aprobada.',
@@ -37,8 +37,8 @@ const stepsData = [
   {
     step: '03',
     badge: 'Propuesta a la Medida',
-    badgeClass: 'bg-purple-50 text-purple-800 border-purple-200',
-    iconColor: 'text-purple-600',
+    badgeClass: 'bg-white text-blue-700 border-blue-200 shadow-2xs',
+    iconColor: 'text-[#0052ff]',
     title: 'Propuesta de Plan de Servicios a la Medida',
     tagline: 'Diseñamos una hoja de ruta con los servicios exactos que requieres.',
     description: 'Te presentamos una propuesta estructurada con los requerimientos puntuales de tu tesis (análisis estadístico, estructuración de artículo, perfil, etc.), sin paquetes inflados ni cobros innecesarios.',
@@ -53,8 +53,8 @@ const stepsData = [
   {
     step: '04',
     badge: 'Gestión por Sistema',
-    badgeClass: 'bg-orange-50 text-orange-800 border-orange-200',
-    iconColor: 'text-orange-600',
+    badgeClass: 'bg-white text-blue-700 border-blue-200 shadow-2xs',
+    iconColor: 'text-[#0052ff]',
     title: 'Cronograma de Entregables por Nuestro Sistema',
     tagline: 'Seguimiento transparente de fases y fechas de entrega en plataforma.',
     description: 'Programamos un calendario con fechas y fases de entrega por capítulos a través de nuestro sistema de consultoría. Podrás revisar, validar y dar feedback de cada avance con total control de tu tiempo.',
@@ -69,8 +69,8 @@ const stepsData = [
   {
     step: '05',
     badge: '100% Remoto • Google Meet',
-    badgeClass: 'bg-sky-50 text-sky-800 border-sky-200',
-    iconColor: 'text-sky-600',
+    badgeClass: 'bg-white text-blue-700 border-blue-200 shadow-2xs',
+    iconColor: 'text-[#0052ff]',
     title: 'Asesorías en Vivo vía Google Meet',
     tagline: 'Acompañamiento 1 a 1 para que domines cada parte de tu tesis.',
     description: 'Realizamos sesiones remotas en vivo mediante Google Meet para explicarte paso a paso la interpretación de resultados, las pruebas estadísticas y cada decisión metodológica con total claridad y seguridad.',
@@ -90,8 +90,8 @@ export default function Methodology() {
       
       {/* Encabezado General Centrado */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 text-center">
-        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 mb-3.5">
-          <i className="bi bi-diagram-3-fill text-blue-700 text-xs"></i>
+        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 mb-3.5 shadow-2xs">
+          <i className="bi bi-diagram-3-fill text-[#0052ff] text-xs"></i>
           <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700">
             Nuestra Metodología de Acompañamiento
           </span>
@@ -110,18 +110,18 @@ export default function Methodology() {
       <div className="w-full">
         {stepsData.map((item, index) => {
           const isEven = index % 2 === 1; // Alternancia zigzag
-          const isAltBg = index % 2 === 1; // Alternancia de color sólido de fondo
+          const isAltBg = index % 2 === 1; // Alternancia de tonos azules de fondo
 
           return (
             <div 
               key={item.step} 
-              className={`methodology-step-band w-full border-t border-slate-200/90 ${
-                isAltBg ? 'bg-slate-50' : 'bg-white'
+              className={`methodology-step-band w-full border-t border-blue-100 ${
+                isAltBg ? 'bg-[#e8f1fc]' : 'bg-[#f0f6ff]'
               }`}
             >
               <div className="w-full grid lg:grid-cols-12 items-stretch min-h-[480px] lg:min-h-[520px]">
 
-                {/* Columna de Texto descriptivo con márgenes que respetan la grilla central */}
+                {/* Columna de Texto descriptivo con fondo en tonos azules */}
                 <div 
                   className={`py-12 sm:py-16 px-6 sm:px-10 flex flex-col justify-center ${
                     isEven 
@@ -132,7 +132,7 @@ export default function Methodology() {
                   <div className="max-w-xl w-full space-y-4">
                     
                     <div className="flex items-center gap-3">
-                      <span className="text-3xl sm:text-4xl font-black text-slate-300 font-mono">
+                      <span className="text-3xl sm:text-4xl font-black text-blue-300 font-mono">
                         {item.step}
                       </span>
                       <span className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${item.badgeClass}`}>
@@ -144,7 +144,7 @@ export default function Methodology() {
                       {item.title}
                     </h3>
 
-                    <p className="text-blue-700 font-semibold text-sm sm:text-base leading-snug">
+                    <p className="text-[#0052ff] font-semibold text-sm sm:text-base leading-snug">
                       {item.tagline}
                     </p>
 
@@ -164,20 +164,24 @@ export default function Methodology() {
                   </div>
                 </div>
 
-                {/* Columna de Imagen a Todo el Espacio con Corte Diagonal Pronunciado */}
+                {/* Columna de Imagen con Tono Azul Claro y Corte Diagonal */}
                 <div 
-                  className={`w-full h-full min-h-[340px] sm:min-h-[420px] lg:min-h-[520px] relative overflow-hidden ${
+                  className={`w-full h-full min-h-[340px] sm:min-h-[420px] lg:min-h-[520px] relative overflow-hidden flex items-center justify-center ${
                     isEven 
                       ? 'lg:col-span-6 lg:order-1 methodology-diagonal-left' 
                       : 'lg:col-span-6 lg:order-2 methodology-diagonal-right'
                   }`}
                 >
-                  <img
-                    src={item.image}
-                    alt={item.imageAlt}
-                    loading="lazy"
-                    className="methodology-full-img w-full h-full object-cover transition-transform duration-500 ease-out"
-                  />
+                  <div className="methodology-img-container w-full h-full relative overflow-hidden">
+                    <img
+                      src={item.image}
+                      alt={item.imageAlt}
+                      loading="lazy"
+                      className="methodology-full-img w-full h-full object-cover transition-transform duration-500 ease-out"
+                    />
+                    {/* Filtro y capa overlay en tono azul claro */}
+                    <div className="methodology-image-tint" aria-hidden="true"></div>
+                  </div>
                 </div>
 
               </div>
@@ -185,7 +189,7 @@ export default function Methodology() {
           );
         })}
         {/* Borde inferior de cierre a todo el ancho */}
-        <div className="w-full border-t border-slate-200/90"></div>
+        <div className="w-full border-t border-blue-100"></div>
       </div>
 
     </section>
