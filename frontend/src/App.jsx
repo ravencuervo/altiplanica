@@ -84,10 +84,8 @@ export default function App() {
           <Posgrado />
         </ScrollReveal>
 
-        {/* 5. Metodología de Trabajo y Acompañamiento */}
-        <ScrollReveal direction="up" delay={100}>
-          <Methodology />
-        </ScrollReveal>
+        {/* 5. Metodología de Trabajo y Acompañamiento (Stacking Cards al Scroll) */}
+        <Methodology />
 
         {/* Software Científico y Estándares Internacionales */}
         <ScrollReveal direction="up" delay={100}>

@@ -1,151 +1,123 @@
-/* Methodology.css - Pasos a todo el ancho con corte diagonal en desktop e imagen con borde redondeado (sin cuadrícula) en responsive */
+/* Methodology.css - Stacking Cards (Tarjetas que se sobreponen al scroll como baraja) */
 
 .methodology-section {
   position: relative;
-  background-color: #f0f6ff;
-}
-
-.methodology-step-band {
-  position: relative;
-  overflow: hidden;
-  transition: background-color 0.25s ease;
-}
-
-/* Margen exterior para que el texto respete la grilla central (max-w-7xl) en desktop */
-@media (min-width: 1024px) {
-  .methodology-text-left {
-    padding-left: max(3rem, calc((100vw - 80rem) / 2 + 2rem));
-    padding-right: 3.5rem;
-    align-items: flex-start;
-  }
-
-  .methodology-text-right {
-    padding-right: max(3rem, calc((100vw - 80rem) / 2 + 2rem));
-    padding-left: 3.5rem;
-    align-items: flex-start;
-  }
+  background-color: #ffffff;
 }
 
 /* ========================================================
-   Capa de Tono Azul Claro para las Imágenes
+   Contenedor de Tarjetas Apilables (Stacking Deck)
    ======================================================== */
-.methodology-image-tint {
+.methodology-cards-stack {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+/* Cada tarjeta tiene position: sticky para sobreponerse al scroll */
+.methodology-card-wrapper {
+  position: sticky;
+  top: calc(5.5rem + var(--card-index) * 16px);
+  z-index: calc(10 + var(--card-index));
+  margin-bottom: 7rem;
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease;
+}
+
+.methodology-card-wrapper:last-child {
+  margin-bottom: 3rem;
+}
+
+/* Tarjeta individual con elevación física, bordes limpios y sombra */
+.methodology-card {
+  background: #ffffff;
+  border-radius: 1.75rem;
+  border: 1px solid rgba(0, 82, 255, 0.20);
+  box-shadow: 
+    0 -6px 25px rgba(0, 30, 90, 0.08),
+    0 24px 45px -12px rgba(15, 23, 42, 0.16),
+    0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Barra superior de acento */
+.methodology-card-topbar {
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(90deg, #0052ff 0%, #2563eb 50%, #38bdf8 100%);
+}
+
+/* ========================================================
+   Columna Derecha: Imagen con Corte Diagonal y Tono Azul Oscurecido
+   ======================================================== */
+.methodology-card-img-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background-color: #8bb6f2; /* Fondo azul medio-oscuro detrás del SVG */
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .methodology-card-diagonal {
+    clip-path: polygon(14% 0%, 100% 0%, 100% 100%, 0% 100%);
+  }
+}
+
+.methodology-card-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  /* Tonos azules más oscuros, contrastados y con cuerpo (sin lavado blanco ni tonos oliva) */
+  filter: grayscale(100%) sepia(100%) hue-rotate(185deg) saturate(280%) brightness(80%) contrast(118%);
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.methodology-card:hover .methodology-card-img {
+  transform: scale(1.035);
+}
+
+/* Capa de mezcla multiply para asentar las sombras en azul marino */
+.methodology-card-img-tint {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(135deg, rgba(0, 82, 255, 0.22) 0%, rgba(56, 189, 248, 0.12) 50%, rgba(186, 230, 253, 0.25) 100%);
-  mix-blend-mode: color;
-  transition: opacity 0.3s ease;
+  background: linear-gradient(135deg, rgba(0, 40, 150, 0.30) 0%, rgba(30, 58, 138, 0.22) 50%, rgba(2, 132, 199, 0.16) 100%);
+  mix-blend-mode: multiply;
   z-index: 2;
 }
 
-.methodology-img-container {
-  position: relative;
-  background-color: #e2edfd;
-}
-
 /* ========================================================
-   1. DESKTOP (≥ 1024px): Corte diagonal pronunciado (20%)
-   ======================================================== */
-@media (min-width: 1024px) {
-  .methodology-diagonal-right {
-    clip-path: polygon(20% 0%, 100% 0%, 100% 100%, 0% 100%);
-    background-color: #e2edfd;
-    height: 100%;
-    min-height: 520px;
-    padding: 0;
-  }
-
-  .methodology-diagonal-left {
-    clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 0% 100%);
-    background-color: #e2edfd;
-    height: 100%;
-    min-height: 520px;
-    padding: 0;
-  }
-
-  .methodology-img-container {
-    width: 100%;
-    height: 100%;
-  }
-
-  .methodology-full-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 0;
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-    display: block;
-    filter: grayscale(100%) sepia(100%) hue-rotate(185deg) saturate(320%) brightness(116%) contrast(88%);
-    transition: transform 0.4s ease-out;
-  }
-
-  .methodology-step-band:hover .methodology-full-img {
-    transform: scale(1.04);
-  }
-}
-
-/* ========================================================
-   2. RESPONSIVE (< 1024px): Imagen pura con bordes redondeados y tono azul claro
+   Adaptaciones Responsivas (Mobile y Tablet)
    ======================================================== */
 @media (max-width: 1023px) {
-  .methodology-diagonal-right,
-  .methodology-diagonal-left {
-    padding: 0 1.25rem 2.5rem 1.25rem;
-    background-color: transparent;
-    border: none;
-    min-height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  .methodology-card-wrapper {
+    top: calc(4.75rem + var(--card-index) * 12px);
+    margin-bottom: 5rem;
+  }
+
+  .methodology-card-wrapper:last-child {
+    margin-bottom: 2rem;
+  }
+
+  .methodology-card-img-container {
+    min-height: 260px;
+    max-height: 340px;
     clip-path: none;
-  }
-
-  .methodology-img-container {
-    width: 100%;
-    max-width: 620px;
-    border-radius: 1.25rem;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0, 82, 255, 0.08);
-  }
-
-  .methodology-full-img {
-    width: 100%;
-    max-width: 620px;
-    height: auto;
-    max-height: 360px;
-    object-fit: cover;
-    border-radius: 1.25rem;
-    border: none;
-    background: transparent;
-    box-shadow: none;
-    padding: 0;
-    display: block;
-    filter: grayscale(100%) sepia(100%) hue-rotate(185deg) saturate(320%) brightness(116%) contrast(88%);
-    transition: transform 0.25s ease;
-  }
-
-  .methodology-step-band:hover .methodology-full-img {
-    transform: translateY(-2px);
   }
 }
 
-@media (min-width: 640px) and (max-width: 1023px) {
-  .methodology-diagonal-right,
-  .methodology-diagonal-left {
-    padding: 0 2.5rem 3.5rem 2.5rem;
+@media (max-width: 640px) {
+  .methodology-card {
+    border-radius: 1.25rem;
   }
 
-  .methodology-img-container {
-    border-radius: 1.5rem;
-  }
-
-  .methodology-full-img {
-    border-radius: 1.5rem;
-    max-height: 440px;
+  .methodology-card-img-container {
+    min-height: 220px;
+    max-height: 270px;
   }
 }

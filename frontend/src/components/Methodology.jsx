@@ -5,8 +5,7 @@ const stepsData = [
   {
     step: '01',
     badge: '100% Gratuito • Sin Costo',
-    badgeClass: 'bg-white text-blue-700 border-blue-200 shadow-2xs',
-    iconColor: 'text-[#0052ff]',
+    badgeClass: 'bg-blue-50 text-blue-700 border-blue-200',
     title: 'Diagnóstico Inicial Gratuito',
     tagline: 'Evaluamos el estado de tu investigación sin costo alguno.',
     description: 'Envíanos tu tema, borrador, matriz de consistencia o base de datos. Un asesor metodológico revisa la situación de tu proyecto para identificar exactamente qué necesitas y cómo resolverlo.',
@@ -21,8 +20,7 @@ const stepsData = [
   {
     step: '02',
     badge: 'Auditoría Metodológica',
-    badgeClass: 'bg-white text-blue-700 border-blue-200 shadow-2xs',
-    iconColor: 'text-[#0052ff]',
+    badgeClass: 'bg-blue-50 text-blue-700 border-blue-200',
     title: 'Análisis y Entendimiento del Problema',
     tagline: 'Comprendemos a fondo las normativas y observaciones de tu facultad.',
     description: 'Auditamos las observaciones de tus jurados dictaminantes, la directiva de grados de tu universidad y el alcance técnico que se requiere para lograr una investigación viable y aprobada.',
@@ -37,8 +35,7 @@ const stepsData = [
   {
     step: '03',
     badge: 'Propuesta a la Medida',
-    badgeClass: 'bg-white text-blue-700 border-blue-200 shadow-2xs',
-    iconColor: 'text-[#0052ff]',
+    badgeClass: 'bg-blue-50 text-blue-700 border-blue-200',
     title: 'Propuesta de Plan de Servicios a la Medida',
     tagline: 'Diseñamos una hoja de ruta con los servicios exactos que requieres.',
     description: 'Te presentamos una propuesta estructurada con los requerimientos puntuales de tu tesis (análisis estadístico, estructuración de artículo, perfil, etc.), sin paquetes inflados ni cobros innecesarios.',
@@ -53,8 +50,7 @@ const stepsData = [
   {
     step: '04',
     badge: 'Gestión por Sistema',
-    badgeClass: 'bg-white text-blue-700 border-blue-200 shadow-2xs',
-    iconColor: 'text-[#0052ff]',
+    badgeClass: 'bg-blue-50 text-blue-700 border-blue-200',
     title: 'Cronograma de Entregables por Nuestro Sistema',
     tagline: 'Seguimiento transparente de fases y fechas de entrega en plataforma.',
     description: 'Programamos un calendario con fechas y fases de entrega por capítulos a través de nuestro sistema de consultoría. Podrás revisar, validar y dar feedback de cada avance con total control de tu tiempo.',
@@ -69,8 +65,7 @@ const stepsData = [
   {
     step: '05',
     badge: '100% Remoto • Google Meet',
-    badgeClass: 'bg-white text-blue-700 border-blue-200 shadow-2xs',
-    iconColor: 'text-[#0052ff]',
+    badgeClass: 'bg-blue-50 text-blue-700 border-blue-200',
     title: 'Asesorías en Vivo vía Google Meet',
     tagline: 'Acompañamiento 1 a 1 para que domines cada parte de tu tesis.',
     description: 'Realizamos sesiones remotas en vivo mediante Google Meet para explicarte paso a paso la interpretación de resultados, las pruebas estadísticas y cada decisión metodológica con total claridad y seguridad.',
@@ -86,7 +81,7 @@ const stepsData = [
 
 export default function Methodology() {
   return (
-    <section id="metodologia" className="methodology-section pt-16 sm:pt-20 pb-0 relative scroll-mt-20">
+    <section id="metodologia" className="methodology-section pt-16 sm:pt-24 pb-20 relative scroll-mt-20">
       
       {/* Encabezado General Centrado */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 text-center">
@@ -101,95 +96,95 @@ export default function Methodology() {
           Paso a Paso Hacia tu Aprobación
         </h2>
 
-        <p className="mt-3 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
+        <p className="mt-3.5 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto leading-relaxed">
           Un proceso estructurado, transparente y dividido en 5 etapas secuenciales para garantizar el rigor científico de tu tesis.
         </p>
       </div>
 
-      {/* Bloques a Pantalla Completa Divididos por una Diagonal Pronunciada */}
-      <div className="w-full">
-        {stepsData.map((item, index) => {
-          const isEven = index % 2 === 1; // Alternancia zigzag
-          const isAltBg = index % 2 === 1; // Alternancia de tonos azules de fondo
+      {/* Contenedor de Tarjetas Apilables al Scroll (Stacking Cards) */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="methodology-cards-stack">
+          {stepsData.map((item, index) => {
+            return (
+              <div 
+                key={item.step} 
+                className="methodology-card-wrapper"
+                style={{
+                  '--card-index': index,
+                  '--total-cards': stepsData.length
+                }}
+              >
+                <div className="methodology-card">
+                  {/* Barra superior de acento degradado */}
+                  <div className="methodology-card-topbar"></div>
 
-          return (
-            <div 
-              key={item.step} 
-              className={`methodology-step-band w-full border-t border-blue-100 ${
-                isAltBg ? 'bg-[#e8f1fc]' : 'bg-[#f0f6ff]'
-              }`}
-            >
-              <div className="w-full grid lg:grid-cols-12 items-stretch min-h-[480px] lg:min-h-[520px]">
+                  <div className="grid lg:grid-cols-12 items-stretch min-h-[460px] lg:min-h-[490px]">
 
-                {/* Columna de Texto descriptivo con fondo en tonos azules */}
-                <div 
-                  className={`py-12 sm:py-16 px-6 sm:px-10 flex flex-col justify-center ${
-                    isEven 
-                      ? 'lg:col-span-6 lg:order-2 methodology-text-right' 
-                      : 'lg:col-span-6 lg:order-1 methodology-text-left'
-                  }`}
-                >
-                  <div className="max-w-xl w-full space-y-4">
-                    
-                    <div className="flex items-center gap-3">
-                      <span className="text-3xl sm:text-4xl font-black text-blue-300 font-mono">
-                        {item.step}
-                      </span>
-                      <span className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${item.badgeClass}`}>
-                        {item.badge}
-                      </span>
-                    </div>
-
-                    <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
-                      {item.title}
-                    </h3>
-
-                    <p className="text-[#0052ff] font-semibold text-sm sm:text-base leading-snug">
-                      {item.tagline}
-                    </p>
-
-                    <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
-                      {item.description}
-                    </p>
-
-                    <div className="space-y-2.5 pt-2">
-                      {item.points.map((point, pIdx) => (
-                        <div key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-                          <i className={`bi bi-check-circle-fill text-sm mt-0.5 shrink-0 ${item.iconColor}`}></i>
-                          <span className="leading-snug">{point}</span>
+                    {/* Columna Izquierda: Información del Paso */}
+                    <div className="lg:col-span-7 p-6 sm:p-10 lg:p-12 flex flex-col justify-center">
+                      <div className="space-y-4">
+                        
+                        {/* Indicadores de Paso */}
+                        <div className="flex items-center gap-3">
+                          <span className="text-3xl sm:text-4xl font-black text-[#0052ff] font-mono tracking-tight">
+                            {item.step}
+                          </span>
+                          <span className={`text-[11px] font-bold uppercase tracking-wider px-3 py-1 rounded-full border ${item.badgeClass}`}>
+                            {item.badge}
+                          </span>
+                          <span className="text-xs font-semibold text-slate-600 ml-auto hidden sm:inline-block">
+                            Fase {item.step} de 05
+                          </span>
                         </div>
-                      ))}
+
+                        {/* Título Principal */}
+                        <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-snug">
+                          {item.title}
+                        </h3>
+
+                        {/* Subtítulo / Tagline */}
+                        <p className="text-[#0052ff] font-semibold text-sm sm:text-base leading-snug">
+                          {item.tagline}
+                        </p>
+
+                        {/* Descripción clara */}
+                        <p className="text-slate-600 text-sm sm:text-base leading-relaxed">
+                          {item.description}
+                        </p>
+
+                        {/* Puntos Clave con Check Azul */}
+                        <div className="space-y-2.5 pt-2">
+                          {item.points.map((point, pIdx) => (
+                            <div key={pIdx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
+                              <i className="bi bi-check-circle-fill text-sm mt-0.5 shrink-0 text-[#0052ff]"></i>
+                              <span className="leading-snug font-medium">{point}</span>
+                            </div>
+                          ))}
+                        </div>
+
+                      </div>
+                    </div>
+
+                    {/* Columna Derecha: Ilustración 3D con Tono Azul Oscurecido y Corte Diagonal */}
+                    <div className="lg:col-span-5 relative overflow-hidden flex items-center justify-center">
+                      <div className="methodology-card-img-container methodology-card-diagonal">
+                        <img
+                          src={item.image}
+                          alt={item.imageAlt}
+                          loading="lazy"
+                          className="methodology-card-img"
+                        />
+                        {/* Capa de mezcla multiply para asentar tonos azules ricos */}
+                        <div className="methodology-card-img-tint" aria-hidden="true"></div>
+                      </div>
                     </div>
 
                   </div>
                 </div>
-
-                {/* Columna de Imagen con Tono Azul Claro y Corte Diagonal */}
-                <div 
-                  className={`w-full h-full min-h-[340px] sm:min-h-[420px] lg:min-h-[520px] relative overflow-hidden flex items-center justify-center ${
-                    isEven 
-                      ? 'lg:col-span-6 lg:order-1 methodology-diagonal-left' 
-                      : 'lg:col-span-6 lg:order-2 methodology-diagonal-right'
-                  }`}
-                >
-                  <div className="methodology-img-container w-full h-full relative overflow-hidden">
-                    <img
-                      src={item.image}
-                      alt={item.imageAlt}
-                      loading="lazy"
-                      className="methodology-full-img w-full h-full object-cover transition-transform duration-500 ease-out"
-                    />
-                    {/* Filtro y capa overlay en tono azul claro */}
-                    <div className="methodology-image-tint" aria-hidden="true"></div>
-                  </div>
-                </div>
-
               </div>
-            </div>
-          );
-        })}
-        {/* Borde inferior de cierre a todo el ancho */}
-        <div className="w-full border-t border-blue-100"></div>
+            );
+          })}
+        </div>
       </div>
 
     </section>
