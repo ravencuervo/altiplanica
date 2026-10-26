@@ -8,29 +8,19 @@
   border-bottom: 1px solid #1e293b;
 }
 
-.contact-submit-btn {
-  background-color: #1e40af; /* Azul sólido */
-  transition: transform 0.2s ease, background-color 0.2s ease;
+.pricing-card-item {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease, background-color 0.25s ease;
 }
 
-.contact-submit-btn:hover {
-  background-color: #1d4ed8;
-  transform: translateY(-2px);
+.pricing-card-item:hover {
+  transform: translateY(-4px);
+  border-color: #3b82f6;
+  box-shadow: 0 12px 28px -6px rgba(0, 82, 255, 0.25);
 }
 
-.contact-submit-btn:active {
-  transform: translateY(0);
-}
-
-/* Optimización táctil para móviles */
+/* Optimización táctil para dispositivos móviles */
 @media (max-width: 639px) {
-  .contact-fullwidth-section input,
-  .contact-fullwidth-section select,
-  .contact-fullwidth-section textarea {
-    font-size: 16px !important; /* Previene auto-zoom molesto en iOS Safari */
-  }
-
-  .contact-submit-btn:hover {
+  .pricing-card-item:hover {
     transform: none;
   }
 }

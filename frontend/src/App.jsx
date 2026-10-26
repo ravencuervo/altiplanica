@@ -97,7 +97,7 @@ export default function App() {
           <FAQ />
         </ScrollReveal>
 
-        {/* 8. Contáctanos (Diagnóstico Gratuito) */}
+        {/* 8. Precios Estimados y Contacto Directo WhatsApp */}
         <ScrollReveal direction="up" delay={100}>
           <ContactSection />
         </ScrollReveal>

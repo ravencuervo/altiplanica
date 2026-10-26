@@ -32,7 +32,7 @@ export default function Footer() {
             {/* Redes sociales exactas: Facebook, Instagram, TikTok, LinkedIn y WhatsApp - Centradas en responsive */}
             <div className="flex items-center justify-center lg:justify-start gap-2.5 pt-2 w-full">
               <a 
-                href="https://facebook.com" 
+                href="https://www.facebook.com/profile.php?id=61595570445839" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="footer-social-link hover:bg-blue-600 hover:border-blue-500" 
@@ -41,7 +41,7 @@ export default function Footer() {
                 <i className="bi bi-facebook"></i>
               </a>
               <a 
-                href="https://instagram.com" 
+                href="https://www.instagram.com/tesis.altiplanica/?hl=en" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="footer-social-link hover:bg-pink-600 hover:border-pink-500" 
@@ -50,7 +50,7 @@ export default function Footer() {
                 <i className="bi bi-instagram"></i>
               </a>
               <a 
-                href="https://tiktok.com" 
+                href="https://www.tiktok.com/@tesisaltiplanica" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="footer-social-link hover:bg-slate-700 hover:border-slate-500" 
@@ -59,7 +59,7 @@ export default function Footer() {
                 <i className="bi bi-tiktok"></i>
               </a>
               <a 
-                href="https://linkedin.com" 
+                href="https://www.linkedin.com/company/tesis-altipl%C3%A1nica/home/?viewAsMember=true" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className="footer-social-link hover:bg-blue-700 hover:border-blue-600" 
@@ -71,7 +71,7 @@ export default function Footer() {
                 href="https://wa.me/51958274958" 
                 target="_blank" 
                 rel="noopener noreferrer" 
-                className="footer-social-link hover:bg-blue-600 hover:border-blue-500" 
+                className="footer-social-link hover:bg-emerald-600 hover:border-emerald-500" 
                 aria-label="WhatsApp"
               >
                 <i className="bi bi-whatsapp"></i>
@@ -85,8 +85,8 @@ export default function Footer() {
             <ul className="footer-link-list space-y-2.5 text-xs">
               <li><a href="#servicios">Análisis Estadístico SPSS / R</a></li>
               <li><a href="#servicios">Perfil y Plan de Tesis</a></li>
-              <li><a href="#servicios">Artículos Scopus & WoS</a></li>
-              <li><a href="#servicios">Formato APA 7ma / Vancouver</a></li>
+              <li><a href="#servicios">Artículos Scopus, WoS y RIA (EPG)</a></li>
+              <li><a href="#servicios">Formato APA & Repositorio Institucional</a></li>
               <li><a href="#servicios">Subsanación de Observaciones</a></li>
               <li><a href="#herramientas">Software y Modelamiento</a></li>
             </ul>

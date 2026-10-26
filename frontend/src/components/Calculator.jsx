@@ -3,11 +3,11 @@ import './Calculator.css';
 
 const serviceOptions = [
   { id: 'tesis_completa', name: 'Desarrollo Integral de Tesis (Todo Incluido)', basePrice: 1200, time: '4-8 semanas', installments: 4 },
-  { id: 'estadistica', name: 'Análisis Estadístico + Interpretación (SPSS / R)', basePrice: 450, time: '5-10 días', installments: 2 },
-  { id: 'perfil', name: 'Perfil / Proyecto de Investigación', basePrice: 500, time: '2-3 semanas', installments: 2 },
-  { id: 'articulo', name: 'Artículo Científico (Scopus / WoS / SciELO)', basePrice: 900, time: '3-6 semanas', installments: 3 },
-  { id: 'formato', name: 'Formateo (APA/Vancouver) + Reporte Turnitin', basePrice: 250, time: '3-5 días', installments: 1 },
-  { id: 'observaciones', name: 'Levantamiento de Observaciones de Jurado', basePrice: 380, time: '4-8 días', installments: 2 },
+  { id: 'estadistica', name: 'Análisis Estadístico + Interpretación (SPSS / R)', basePrice: 450, time: '48-72 horas', installments: 2 },
+  { id: 'perfil', name: 'Perfil / Proyecto de Investigación', basePrice: 500, time: '3-5 días', installments: 2 },
+  { id: 'articulo', name: 'Artículo Científico (Scopus / WoS / RIA EPG)', basePrice: 600, time: '3-6 semanas', installments: 3 },
+  { id: 'formato', name: 'Formato APA y Formato Propuesto por Repositorio Institucional', basePrice: 50, time: '24-48 horas', installments: 1 },
+  { id: 'diapositivas', name: 'Creación de Diapositivas para Sustentación', basePrice: 50, time: '24-48 horas', installments: 1 },
 ];
 
 const levelMultipliers = {

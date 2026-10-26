@@ -21,7 +21,7 @@ export default function Navbar({ onOpenPortal }) {
     { name: 'Metodología', href: '#metodologia' },
     { name: 'Software Especializado', href: '#software' },
     { name: 'Preguntas', href: '#preguntas' },
-    { name: 'Contáctanos', href: '#contacto' },
+    { name: 'Precios', href: '#precios' },
   ];
 
   return (
@@ -59,15 +59,16 @@ export default function Navbar({ onOpenPortal }) {
             ))}
           </nav>
 
-          {/* Desktop Portal CTA */}
+          {/* Desktop Contact CTA */}
           <div className="hidden lg:flex items-center">
-            <button
-              onClick={onOpenPortal}
-              className="flex items-center gap-1.5 px-3.5 py-1.5 rounded-full text-[11px] xl:text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all hover:scale-105 active:scale-95 cursor-pointer"
+            <a
+              href="https://wa.me/51958274958?text=Hola%20TesisAltipl%C3%A1nica%2C%20deseo%20contactarme%20para%20consultar%20sobre%20mi%20tesis%20o%20proyecto"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center justify-center px-4 py-1.5 rounded-full text-[11px] xl:text-xs font-bold text-white bg-blue-700 hover:bg-blue-800 shadow-sm transition-all hover:scale-105 active:scale-95 cursor-pointer"
             >
-              <i className="bi bi-person-lock text-sm"></i>
-              <span>Portal del Tesista</span>
-            </button>
+              <span>Contacto</span>
+            </a>
           </div>
 
           {/* Mobile toggle */}
@@ -94,16 +95,15 @@ export default function Navbar({ onOpenPortal }) {
               {link.name}
             </a>
           ))}
-          <button
-            onClick={() => {
-              setMobileMenuOpen(false);
-              if (onOpenPortal) onOpenPortal();
-            }}
-            className="w-full flex items-center justify-center gap-2 mt-3 px-3 py-2.5 text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-xl transition-colors shadow-md"
+          <a
+            href="https://wa.me/51958274958?text=Hola%20TesisAltipl%C3%A1nica%2C%20deseo%20contactarme%20para%20consultar%20sobre%20mi%20tesis%20o%20proyecto"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => setMobileMenuOpen(false)}
+            className="w-full flex items-center justify-center mt-3 px-3 py-2.5 text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-xl transition-colors shadow-md"
           >
-            <i className="bi bi-person-lock text-base"></i>
-            <span>Portal del Tesista (Seguimiento)</span>
-          </button>
+            <span>Contacto</span>
+          </a>
         </div>
       )}
     </header>

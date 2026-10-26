@@ -63,7 +63,7 @@ export default function Hero() {
               <strong className="text-slate-900 font-semibold">Maestría</strong> y{' '}
               <strong className="text-slate-900 font-semibold">Doctorado</strong>.
               Desde el perfil de proyecto hasta la contrastación estadística (SPSS/R),
-              formateo editorial (APA/Vancouver) y publicación científica indexada.
+              formateo editorial (normas APA y formato de repositorio institucional) y publicación científica indexada.
             </p>
 
             {/* Call to action buttons */}
@@ -72,8 +72,8 @@ export default function Hero() {
                 href="#contacto"
                 className="hero-cta-primary w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 sm:px-6 py-3 sm:py-3.5 rounded-xl text-sm sm:text-base font-semibold"
               >
-                <i className="bi bi-chat-dots-fill"></i>
-                <span>Diagnóstico Gratuito de tu Tesis</span>
+                <i className="bi bi-tag-fill"></i>
+                <span>Ver Precios Estimados</span>
               </a>
               <a
                 href="#servicios"
