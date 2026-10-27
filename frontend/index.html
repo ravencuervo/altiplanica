@@ -3,7 +3,13 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/images/logos/tesis_logo.svg" />
+  <!-- Favicon y Assets de Marca para Google Search, Navegadores y Móviles -->
+  <link rel="icon" href="/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="48x48" href="/favicon-48x48.png" />
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <!-- SEO General & Canonical -->
@@ -40,22 +46,104 @@
     href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
     rel="stylesheet">
 
-  <!-- Datos estructurados Schema.org para Google (Reconocimiento de Marca / Entidad) -->
+  <!-- Datos estructurados Schema.org para Google (Nombre del Sitio Web, Entidad de Marca y Enlaces de Navegación / Sitelinks) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "EducationalOrganization",
-    "name": "Tesis Altiplánica",
-    "alternateName": ["TesisAltiplanica", "Tesis Altiplanica"],
-    "url": "https://www.tesisaltiplanica.org.pe/",
-    "logo": "https://www.tesisaltiplanica.org.pe/images/logos/tesis_logo.png",
-    "description": "Consultoría y asesoría académica de alto nivel en tesis de pregrado, posgrado (maestría y doctorado), análisis estadístico y redacción de artículos científicos.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressCountry": "PE",
-      "addressRegion": "Puno"
-    },
-    "sameAs": []
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://www.tesisaltiplanica.org.pe/#website",
+        "url": "https://www.tesisaltiplanica.org.pe/",
+        "name": "Tesis Altiplánica",
+        "alternateName": [
+          "Tesis Altiplanica",
+          "Tesis Altiplánica - Consultoría de Tesis & Estadística",
+          "tesisaltiplanica.org.pe"
+        ],
+        "description": "Consultoría académica de alto nivel en tesis de pregrado, posgrado y análisis estadístico en Puno y a nivel nacional.",
+        "publisher": {
+          "@id": "https://www.tesisaltiplanica.org.pe/#organization"
+        },
+        "inLanguage": "es"
+      },
+      {
+        "@type": "EducationalOrganization",
+        "@id": "https://www.tesisaltiplanica.org.pe/#organization",
+        "name": "Tesis Altiplánica",
+        "alternateName": ["TesisAltiplanica", "Tesis Altiplanica"],
+        "url": "https://www.tesisaltiplanica.org.pe/",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://www.tesisaltiplanica.org.pe/images/logos/tesis_logo.png",
+          "width": 1254,
+          "height": 1254
+        },
+        "image": "https://www.tesisaltiplanica.org.pe/images/logos/tesis_logo.png",
+        "description": "Consultoría y asesoría académica de alto nivel en tesis de pregrado, posgrado (maestría y doctorado), análisis estadístico y redacción de artículos científicos.",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "PE",
+          "addressRegion": "Puno"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+51-958274958",
+          "contactType": "customer service",
+          "areaServed": "PE",
+          "availableLanguage": "Spanish"
+        }
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://www.tesisaltiplanica.org.pe/#navigation",
+        "name": "Navegación Principal de Tesis Altiplánica",
+        "itemListElement": [
+          {
+            "@type": "SiteNavigationElement",
+            "position": 1,
+            "name": "Servicios de Tesis",
+            "description": "Asesoría integral, análisis estadístico con SPSS y RStudio, matriz de consistencia y validación Turnitin.",
+            "url": "https://www.tesisaltiplanica.org.pe/#servicios"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 2,
+            "name": "Tesis Pregrado (UNA Puno)",
+            "description": "Modalidades de titulación por tesis tradicional y titulación rápida por artículo científico para bachilleres.",
+            "url": "https://www.tesisaltiplanica.org.pe/#pregrado"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 3,
+            "name": "Posgrado (Maestrías y Doctorados)",
+            "description": "Segunda especialidad clínica, tesis de maestría explicativa y tesis doctorales con modelos avanzados.",
+            "url": "https://www.tesisaltiplanica.org.pe/#posgrado"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 4,
+            "name": "Metodología de Trabajo",
+            "description": "Acompañamiento paso a paso, cronograma de entregas por capítulos y levantamiento de observaciones.",
+            "url": "https://www.tesisaltiplanica.org.pe/#metodologia"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 5,
+            "name": "Preguntas Frecuentes",
+            "description": "Información sobre garantías de aprobación, software estadístico, confidencialidad y pagos.",
+            "url": "https://www.tesisaltiplanica.org.pe/#preguntas"
+          },
+          {
+            "@type": "SiteNavigationElement",
+            "position": 6,
+            "name": "Contacto y Cotizaciones",
+            "description": "Comunícate directamente con nuestros especialistas vía WhatsApp para una cotización inmediata.",
+            "url": "https://www.tesisaltiplanica.org.pe/#precios"
+          }
+        ]
+      }
+    ]
   }
   </script>
 </head>
