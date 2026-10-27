@@ -42,3 +42,51 @@
   background-color: #0f172a; /* Solid Obsidian */
   color: #ffffff;
 }
+
+/* Subniveles Dropdown */
+.navbar-dropdown-wrapper {
+  position: relative;
+}
+
+.navbar-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  z-index: 100;
+  padding-top: 0.5rem; /* Invisible bridge to prevent mouse leave */
+}
+
+/* Left alignment for wider dropdowns */
+.navbar-dropdown-menu.dropdown-wide {
+  left: 0;
+  transform: translateY(6px);
+}
+
+.navbar-dropdown-wrapper:hover .navbar-dropdown-menu,
+.navbar-dropdown-wrapper:focus-within .navbar-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+  pointer-events: auto;
+}
+
+.navbar-dropdown-wrapper:hover .navbar-dropdown-menu.dropdown-wide,
+.navbar-dropdown-wrapper:focus-within .navbar-dropdown-menu.dropdown-wide {
+  transform: translateY(0);
+}
+
+/* Sublevel item styles */
+.sublevel-card {
+  transition: all 0.15s ease-in-out;
+}
+
+.sublevel-card:hover {
+  background-color: #eff6ff; /* blue-50 */
+  transform: translateX(2px);
+}
+

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Pregrado.css';
 
 const modalidadesPregrado = [
@@ -37,6 +37,16 @@ const modalidadesPregrado = [
 export default function Pregrado() {
   const [activeTab, setActiveTab] = useState('tesis');
   const current = modalidadesPregrado.find((m) => m.id === activeTab) || modalidadesPregrado[0];
+
+  useEffect(() => {
+    const handleSublevel = (e) => {
+      if (e.detail?.target === 'pregrado' && e.detail?.tab) {
+        setActiveTab(e.detail.tab);
+      }
+    };
+    window.addEventListener('selectSublevel', handleSublevel);
+    return () => window.removeEventListener('selectSublevel', handleSublevel);
+  }, []);
 
   return (
     <section id="pregrado" className="pregrado-section py-16 sm:py-20 bg-white relative scroll-mt-20">

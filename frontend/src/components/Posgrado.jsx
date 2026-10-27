@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './Posgrado.css';
 
 const programasPosgrado = [
@@ -52,6 +52,16 @@ const programasPosgrado = [
 export default function Posgrado() {
   const [activeTab, setActiveTab] = useState('especialidad');
   const current = programasPosgrado.find((p) => p.id === activeTab) || programasPosgrado[0];
+
+  useEffect(() => {
+    const handleSublevel = (e) => {
+      if (e.detail?.target === 'posgrado' && e.detail?.tab) {
+        setActiveTab(e.detail.tab);
+      }
+    };
+    window.addEventListener('selectSublevel', handleSublevel);
+    return () => window.removeEventListener('selectSublevel', handleSublevel);
+  }, []);
 
   return (
     <section id="posgrado" className="posgrado-section py-16 sm:py-20 relative scroll-mt-20">

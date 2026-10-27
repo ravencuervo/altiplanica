@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import BeforeAfterSlider from './BeforeAfterSlider';
 import './Services.css';
 
@@ -128,6 +128,16 @@ const servicesData = [
 export default function Services() {
   const [activeId, setActiveId] = useState('estadistica');
   const activeService = servicesData.find((s) => s.id === activeId) || servicesData[0];
+
+  useEffect(() => {
+    const handleSublevel = (e) => {
+      if (e.detail?.target === 'servicios' && e.detail?.id) {
+        setActiveId(e.detail.id);
+      }
+    };
+    window.addEventListener('selectSublevel', handleSublevel);
+    return () => window.removeEventListener('selectSublevel', handleSublevel);
+  }, []);
 
   return (
     <section id="servicios" className="services-section py-20 bg-slate-50 relative scroll-mt-20">
