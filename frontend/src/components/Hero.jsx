@@ -45,7 +45,7 @@ export default function Hero() {
             {/* Top pill badge */}
             <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full text-[11px] sm:text-xs md:text-sm font-semibold bg-slate-100 border border-slate-200 text-slate-800 max-w-full">
               <span className="w-2 h-2 rounded-full bg-blue-700 shrink-0"></span>
-              <span className="truncate sm:whitespace-normal">Asesoría Especializada de Pregrado & Posgrado</span>
+              <span className="truncate sm:whitespace-normal">Asesoramiento y Asesoría de Tesis en Puno</span>
               <i className="bi bi-patch-check-fill text-blue-700 shrink-0"></i>
             </div>
 
@@ -57,8 +57,8 @@ export default function Hero() {
 
             {/* Subheading */}
             <p className="text-sm sm:text-base md:text-lg text-slate-600 leading-relaxed max-w-xl mx-auto lg:mx-0">
-              Acompañamiento metodológico y estadístico riguroso para{' '}
-              <strong className="text-slate-900 font-semibold">Pregrado</strong>,{' '}
+              Acompañamiento metodológico y estadístico en Puno y a nivel nacional para{' '}
+              <strong className="text-slate-900 font-semibold">Pregrado</strong> (UNA Puno),{' '}
               <strong className="text-slate-900 font-semibold">Segunda Especialidad</strong>,{' '}
               <strong className="text-slate-900 font-semibold">Maestría</strong> y{' '}
               <strong className="text-slate-900 font-semibold">Doctorado</strong>.

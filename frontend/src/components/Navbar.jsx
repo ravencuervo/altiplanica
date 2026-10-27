@@ -4,10 +4,7 @@ import './Navbar.css';
 export default function Navbar({ onOpenPortal }) {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [expandedMobile, setExpandedMobile] = useState({
-    Pregrado: true,
-    Posgrado: true,
-  });
+  const [expandedMobile, setExpandedMobile] = useState({});
 
   useEffect(() => {
     const handleScroll = () => {
@@ -76,7 +73,6 @@ export default function Navbar({ onOpenPortal }) {
     {
       name: 'Pregrado',
       href: '#pregrado',
-      badge: 'UNA Puno',
       sublevels: [
         {
           name: 'Sustentación de Tesis',
@@ -99,7 +95,6 @@ export default function Navbar({ onOpenPortal }) {
     {
       name: 'Posgrado',
       href: '#posgrado',
-      badge: 'EPG Puno',
       sublevels: [
         {
           name: 'Segunda Especialidad',
@@ -276,7 +271,12 @@ export default function Navbar({ onOpenPortal }) {
 
           {/* Mobile toggle */}
           <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            onClick={() => {
+              if (mobileMenuOpen) {
+                setExpandedMobile({});
+              }
+              setMobileMenuOpen(!mobileMenuOpen);
+            }}
             className="lg:hidden p-2 text-slate-700 hover:text-slate-950 rounded-lg hover:bg-slate-100 transition-colors"
             aria-label="Abrir menú"
           >
@@ -314,11 +314,6 @@ export default function Navbar({ onOpenPortal }) {
                     className="flex-1 hover:text-blue-700 py-0.5"
                   >
                     {link.name}
-                    {link.badge && (
-                      <span className="ml-2 text-[10px] font-bold px-1.5 py-0.5 bg-blue-100 text-blue-700 rounded">
-                        {link.badge}
-                      </span>
-                    )}
                   </a>
                   <button
                     type="button"
